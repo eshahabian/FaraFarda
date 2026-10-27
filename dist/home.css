@@ -2,3 +2,12 @@
 
 /* Preserve the reference masthead and final brand tile. */
 .signature{position:relative;aspect-ratio:474/196;background:url("assets/home-reference.jpg") 94.364% 93.77%/216.034% 653.061% no-repeat}.signature img{display:none}.signature h2{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%)}footer{min-height:40px;font-size:0}footer span{font-size:0}
+/* Gentle photo motion: no extra image downloads. */
+.photo-window{display:block;overflow:hidden;aspect-ratio:474/155}
+.photo-window img{height:100%;animation:fara-photo-drift 14s ease-in-out infinite alternate;animation-play-state:paused;transform-origin:50% 50%}
+.motion-visible .photo-window img{animation-play-state:running}
+nav a:nth-child(2n) .photo-window img{animation-direction:alternate-reverse;animation-duration:17s}
+nav a:nth-child(3n) .photo-window img{animation-delay:-6s}
+nav a h2{position:relative;background:#03152b;z-index:1}
+@keyframes fara-photo-drift{from{transform:scale(1.015) translateX(-.3%)}to{transform:scale(1.075) translateX(.3%)}}
+@media(prefers-reduced-motion:reduce){.photo-window img{animation:none;transform:none}nav a:hover{transform:none}}
