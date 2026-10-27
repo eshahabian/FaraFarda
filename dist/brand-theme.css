@@ -1,0 +1,17 @@
+/* Shared palette matches the homepage exactly. */
+:root{color-scheme:dark;--navy:#021329;--panel:#03152b;--gold:#c5a557;--cream:#fff3ce}
+body{background:var(--navy);color:var(--cream)}
+header,footer,nav.open{background:var(--navy);color:var(--cream)}
+main>.section,.detail-hero,.detail-start,.detail-related{background:var(--navy);color:var(--cream)}
+.detail-start{border-block:1px solid var(--gold)}
+h1,h2,h3,.detail-hero h1,.brand-sub{color:var(--cream)}
+h2 span,.detail-symbol,.detail-features b,.section-label,.detail-hero .section-label,.detail-next{color:var(--gold)}
+p,.detail-hero p,.breadcrumb,.detail-start li,footer p{color:#e5d9bc}
+.header-cta,.detail-features article,.detail-start li,.related-links a,.footer-bottom{border-color:var(--gold)}
+.detail-features article{background:var(--panel);padding:24px;border:1px solid var(--gold)}
+.related-links a:hover,nav a:hover,.detail-next:hover{color:#eac977}
+.button{background:var(--gold);color:var(--navy)}
+.button:hover{background:#eac977}
+.brand{width:auto}.brand-sub{font-size:14px;letter-spacing:0;margin:0}
+#menu{color:var(--cream)}
+a:focus-visible,button:focus-visible{outline-color:var(--gold)}
