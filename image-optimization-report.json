@@ -1,0 +1,42 @@
+[
+  {
+    "file": "agriculture.png",
+    "before": 2622966,
+    "after": 2035150
+  },
+  {
+    "file": "energy.png",
+    "before": 2406863,
+    "after": 1984752
+  },
+  {
+    "file": "group.png",
+    "before": 2781481,
+    "after": 2199884
+  },
+  {
+    "file": "logistics.png",
+    "before": 2593361,
+    "after": 2084500
+  },
+  {
+    "file": "mining.png",
+    "before": 3024240,
+    "after": 2231566
+  },
+  {
+    "file": "real-estate.png",
+    "before": 2948596,
+    "after": 2371118
+  },
+  {
+    "file": "textiles.png",
+    "before": 3066265,
+    "after": 2056920
+  },
+  {
+    "file": "trade.png",
+    "before": 2354134,
+    "after": 1883742
+  }
+]
