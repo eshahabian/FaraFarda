@@ -9,24 +9,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../sector.css?v=3">
+<link rel="stylesheet" href="../navigation.css?v=1">
+<link rel="stylesheet" href="../footer.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="../index.html" class="brand" aria-label="فرا، صفحه اصلی">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <nav class="site-nav" aria-label="منوی اصلی">
-    <a href="../index.html">صفحه اصلی</a>
-    <a href="../index.html#sectors">حوزه‌های فعالیت</a>
-    <a href="#services">دامنه فعالیت</a>
-    <a href="#start">شروع همکاری</a>
-  </nav>
-  <a class="header-cta" href="#start">مسیر همکاری <span>↖</span></a>
-  <button id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+<header class="fara-header" data-navigation>
+  <div class="fara-mainbar">
+    <a class="fara-brand" href="../index.html" aria-label="گروه بین‌المللی فرا، صفحه اصلی"><img src="../assets/logo.png" alt="نشان فرا" width="82" height="44"><span>گروه بین‌المللی فرا<small lang="en" dir="ltr">FARA INTERNATIONAL GROUP</small></span></a>
+    <button class="fara-menu-toggle" type="button" aria-controls="fara-primary" aria-expanded="false"><span class="fara-menu-lines" aria-hidden="true"></span><span data-menu-label>منو</span></button>
+
+  </div>
+  <nav class="fara-sector-strip" id="fara-primary" aria-label="منوی اصلی"><div><a href="../index.html">صفحهٔ اصلی</a><a href="../sectors/mining.html">تجهیزات صنایع معدنی</a><a href="../sectors/logistics.html" aria-current="page">حمل‌ونقل و لجستیک</a><a href="../sectors/trade.html">صادرات و واردات</a><a href="../sectors/energy.html">نفت، گاز و پتروشیمی</a><a href="../sectors/textiles.html">نساجی و منسوجات</a><a href="../sectors/real-estate.html">عمران و سرمایه‌گذاری ملکی</a><a href="../sectors/agriculture.html">کشاورزی و کشت و صنعت</a></div></nav>
 </header>
 
 <main>
@@ -46,32 +43,13 @@
       <p class="lead">ارائه خدمات حمل جاده‌ای، دریایی، هوایی و ریلی، ترانزیت، فورواردینگ و مدیریت زنجیره تأمین؛ با تمرکز بر حمل‌ونقل چندوجهی، بهینه‌سازی مسیرها و تسهیل جابه‌جایی محموله‌های صنعتی و تجاری.</p>
       <div class="hero-actions">
         <a class="button" href="#start">آغاز گفت‌وگوی همکاری <span>↙</span></a>
-        <a class="button-ghost" href="#services">مشاهده دامنه فعالیت</a>
+        <a class="button-ghost" href="#profile">معرفی و شرح فعالیت‌ها</a>
       </div>
       <div class="trust-row"><span>حمل چندوجهی</span><span>ترانزیت و فورواردینگ</span><span>مدیریت زنجیره تأمین</span></div>
     </div>
   </section>
 
-  <section class="section sector-intro">
-    <div class="copy">
-      <div class="section-label"><span>نگاه عملیاتی</span><span dir="ltr">HOW WE WORK</span></div>
-      <h2>جابه‌جایی قابل اتکا در مسیرهای بین‌المللی.</h2>
-      <p>مسیر، شیوه حمل و زمان‌بندی را با نوع محموله هماهنگ می‌کنیم تا جریان تأمین پیوسته و قابل پیش‌بینی بماند.</p>
-    </div>
-    <figure class="intro-figure">
-      <img src="../assets/logistics.webp" alt="حمل‌ونقل و لجستیک" width="1200" height="900" loading="lazy" decoding="async">
-      <figcaption class="intro-caption">حمل‌ونقل و لجستیک · گروه بین‌المللی فرا</figcaption>
-    </figure>
-  </section>
-
-  <section class="section sector-services" id="services">
-    <div class="head">
-      <div class="section-label"><span>دامنه فعالیت</span><span dir="ltr">SCOPE OF ACTIVITIES</span></div>
-      <h2>خدمات این حوزه، <em>متناسب با نیاز شما.</em></h2>
-      <p>سه محور اصلی فعالیت در این بخش؛ برای تعریف دقیق‌تر همکاری، از بخش شروع گفت‌وگو استفاده کنید.</p>
-    </div>
-    <div class="service-grid"><article><b>۰1</b><h3>حمل چندوجهی</h3><p>حمل جاده‌ای، دریایی، هوایی و ریلی متناسب با نیاز محموله.</p></article><article><b>۰2</b><h3>ترانزیت و فورواردینگ</h3><p>تسهیل جابه‌جایی محموله‌های صنعتی و تجاری میان بازارها.</p></article><article><b>۰3</b><h3>مدیریت زنجیره تأمین</h3><p>تمرکز بر بهینه‌سازی مسیرها و پیوستگی جریان تأمین.</p></article></div>
-  </section>
+  <section class="profile-section" id="profile"><div class="profile-layout"><aside class="profile-contents"><span>در این صفحه می‌خوانید</span><h2>معرفی FARA TransLog و خدمات حمل‌ونقل</h2><nav aria-label="فهرست مطالب این حوزه"><a href="#profile-1">۱. معرفی مجموعه FARA TransLog</a><a href="#profile-2">۲. حوزه‌های تخصصی فعالیت</a><a href="#profile-3">۳. انواع روش‌های حمل دریایی</a><a href="#profile-4">۴ خدمات تکمیلی لجستیک</a><a href="#profile-5">۵. حمل‌ونقل چندوجهی، یک راهکار، چند مسیر</a><a href="#profile-6">۶. صنایع و کالاهای تحت پوشش</a><a href="#profile-7">۷ مزیت‌های رقابتی و رویکرد کاری FARA TransLog</a><a href="#profile-8">۸ چشم‌انداز ما</a><a href="#profile-9">۹. دعوت به همکاری و ارتباط با ما</a></nav><a class="profile-back" href="../index.html#sectors">همهٔ حوزه‌های فعالیت ←</a></aside><article class="profile-article" aria-label="معرفی FARA TransLog و خدمات حمل‌ونقل"><section id="profile-1" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">01</div><h2>۱. معرفی مجموعه FARA TransLog</h2><h3>لجستیک و حمل‌ونقل بین‌المللی</h3><p>در دنیای تجارت امروز، حمل‌ونقل تنها جابه‌جایی کالا از نقطه‌ای به نقطه دیگر نیست؛ بلکه حلقه‌ای راهبردی در زنجیره تأمین، توسعه تجارت بین‌الملل و ارتباط میان بازارهای جهانی است.</p><p>FARA TransLog به‌عنوان بخش تخصصی لجستیک و حمل‌ونقل هلدینگ بین‌المللی فرا، با رویکردی جامع در زمینه طراحی، سازمان‌دهی و اجرای راهکارهای حمل‌ونقل بین‌المللی فعالیت می‌کند.</p><p>حوزه فعالیت این مجموعه، حمل‌ونقل دریایی، هوایی، زمینی و ریلی را در بر می‌گیرد و با بهره‌گیری از ظرفیت‌های حمل‌ونقل چندوجهی، امکان انتقال انواع کالاهای تجاری، صنعتی، معدنی، پروژه‌ای و فله را فراهم می‌سازد.</p><p>از حمل کانتینری و محموله‌های فله دریایی تا حمل هوایی کالاهای حساس و فوری، حمل جاده‌ای و ترانزیت بین‌المللی و جابه‌جایی ریلی هدف ما ارائه راهکارهایی متناسب با ماهیت محموله، مبدا، مقصد، زمان‌بندی و الزامات تجاری مشتریان است.</p><p>ما در FARA TransLog تلاش می‌کنیم با ایجاد ارتباط میان ظرفیت‌های حمل‌ونقل داخلی و بین‌المللی، مدیریت مسیرهای تجاری و هماهنگی مراحل مختلف عملیات لجستیکی، فرآیند انتقال کالا را به تجربه‌ای مطمئن، شفاف و کارآمد تبدیل کنیم.</p></section><section id="profile-2" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">02</div><h2>۲. حوزه‌های تخصصی فعالیت</h2><h3>الف) حمل‌ونقل دریایی | Maritime Freight</h3><p>حمل‌ونقل دریایی یکی از اصلی‌ترین محورهای فعالیت FARA TransLog است. این شیوه با توجه به ظرفیت بالای جابه‌جایی و صرفهٔ اقتصادی، راهکاری مهم برای تجارت بین‌المللی و انتقال محموله‌های حجیم محسوب می‌شود.</p><ul><li>حمل کانتینری کامل (FCL)</li><li>حمل خرده‌بار کانتینری (LCL)</li><li>حمل محموله‌های فله خشک (Dry Bulk)</li><li>حمل محموله‌های فله مایع (Liquid Bulk)</li><li>حمل کالاهای عمومی (General Cargo)</li><li>حمل محموله‌های سنگین و فوق‌سنگین</li><li>حمل کالاهای پروژه‌ای و صنعتی</li><li>هماهنگی عملیات بارگیری، تخلیه و حمل بندری</li><li>برنامه‌ریزی مسیرهای دریایی و انتخاب خطوط کشتیرانی متناسب با محموله</li></ul><h3>ب) حمل‌ونقل هوایی | Air Freight</h3><p>حمل‌ونقل هوایی برای محموله‌هایی که سرعت تحویل، امنیت و زمان‌بندی در آن‌ها اهمیت ویژه‌ای دارد، از جایگاه مهمی برخوردار است.</p><ul><li>حمل هوایی صادراتی و وارداتی</li><li>حمل بارهای تجاری و صنعتی</li><li>حمل قطعات و تجهیزات حساس</li><li>حمل محموله‌های فوری و زمان‌محور</li><li>خدمات حمل هوایی عمومی و تخصصی</li><li>هماهنگی امور فرودگاهی و اسناد حمل</li><li>مدیریت عملیات دریافت و تحویل محموله</li></ul><h3>ج) حمل‌ونقل زمینی و جاده‌ای | Road Freight</h3><p>حمل‌ونقل جاده‌ای یکی از انعطاف‌پذیرترین روش‌های انتقال کالا در تجارت منطقه‌ای و بین‌المللی است. این بخش با تکیه بر ظرفیت ناوگان حمل‌ونقل جاده‌ای و برنامه‌ریزی مسیرهای بین‌المللی، امکان جابه‌جایی کالا میان مراکز تولیدی، انبارها، پایانه‌های مرزی و مقاصد تجاری را فراهم می‌کند.</p><ul><li>حمل جاده‌ای داخلی و بین‌المللی</li><li>حمل ترانزیتی و عبوری (Transit)</li><li>حمل با کامیون‌های چادری و ترانزیت</li><li>حمل کانتینری جاده‌ای</li><li>حمل مواد معدنی و محصولات صنعتی</li><li>حمل محموله‌های فله و بسته‌بندی‌شده</li><li>حمل محموله‌های سنگین و پروژه‌ای</li><li>حمل تانکری و محموله‌های مایع با تجهیزات مناسب</li><li>حمل ترکیبی جاده‌ای و دریایی</li><li>برنامه‌ریزی مسیر و هماهنگی امور مرزی</li></ul><h3>د) حمل‌ونقل ریلی | Rail Freight</h3><p>حمل‌ونقل ریلی راهکاری مؤثر برای انتقال محموله‌های حجیم و سنگین در مسیرهای داخلی و بین‌المللی است. این روش در بسیاری از مسیرها می‌تواند با کاهش هزینه‌های عملیاتی و افزایش ظرفیت جابه‌جایی، نقش مهمی در بهینه‌سازی زنجیرهٔ تأمین ایفا کند.</p><ul><li>حمل ریلی کانتینری</li><li>حمل مواد معدنی و محصولات فله</li><li>حمل کالاهای صنعتی و تجاری</li><li>حمل محموله‌های سنگین</li><li>هماهنگی حمل ترکیبی ریلی و جاده‌ای</li><li>برنامه‌ریزی مسیرهای ریلی بین‌المللی</li><li>هماهنگی عملیات بارگیری و تخلیه</li></ul></section><section id="profile-3" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">03</div><h2>۳. انواع روش‌های حمل دریایی</h2><h3>حمل کانتینری | Container Shipping</h3><p>انتقال کالا در کانتینرهای استاندارد ۲۰ و ۴۰ فوت، به‌صورت FCL و LCL برای انواع محموله‌های تجاری و صنعتی.</p><h3>حمل فله خشک | Dry Bulk Shipping</h3><p>جابه‌جایی مواد معدنی، سنگ‌آهن، کرومیت، سیمان، کلینکر، غلات و سایر کالاهای فله خشک.</p><h3>حمل فله مایع | Liquid Bulk Shipping</h3><p>انتقال فرآورده‌های نفتی، محصولات پتروشیمی، مواد شیمیایی مجاز و سایر محموله‌های مایع با شناورهای تخصصی.</p><h3>حمل پروژه‌ای و محموله‌های خاص | Project Cargo</h3><p>انتقال تجهیزات صنعتی، ماشین‌آلات معدنی، قطعات حجیم، محموله‌های سنگین و محموله‌های خارج از ابعاد استاندارد.</p><h3>حمل کالای عمومی | General Cargo</h3><p>انتقال انواع کالاهای بسته‌بندی‌شده، پالت‌شده، فلزی، صنعتی و محموله‌هایی که نیازمند شیوهٔ بارگیری و تخلیهٔ خاص هستند.</p></section><section id="profile-4" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">04</div><h2>۴ خدمات تکمیلی لجستیک</h2><p>FARA TransLog علاوه بر عملیات اصلی حمل‌ونقل، می‌تواند خدمات مکمل زیر را نیز در قالب راهکارهای یکپارچه لجستیکی ارائه کند:</p><ul><li>مشاوره و طراحی مسیر حمل‌ونقل</li><li>برنامه‌ریزی و مدیریت زنجیره تأمین</li><li>هماهنگی امور گمرکی و تشریفات صادرات و واردات</li><li>خدمات انبارداری و نگهداری کالا</li><li>هماهنگی بیمه حمل‌ونقل</li><li>مدیریت اسناد حمل و مدارک تجاری</li><li>رهگیری و نظارت بر وضعیت محموله</li><li>هماهنگی بارگیری و تخلیه</li><li>طراحی راهکارهای حمل ترکیبی (Multimodal Transport)</li><li>مدیریت لجستیک محموله‌های پروژه‌ای</li></ul></section><section id="profile-5" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">05</div><h2>۵. حمل‌ونقل چندوجهی، یک راهکار، چند مسیر</h2><p>در تجارت بین‌المللی، گاهی استفاده از یک شیوه حمل به‌تنهایی پاسخگوی نیازهای تجاری نیست. FARA TransLog با رویکرد حمل‌ونقل چندوجهی، امکان ترکیب روش‌های مختلف حمل را متناسب با شرایط هر محموله فراهم می‌کند.</p><p>در این رویکرد، مسیر انتقال کالا با در نظر گرفتن عواملی مانند هزینه، زمان، نوع کالا، محدودیت‌های زیرساختی و الزامات مرزی طراحی می‌شود.</p><p>ترکیب حمل دریایی، جاده‌ای، ریلی و هوایی می‌تواند زمینه‌ساز افزایش انعطاف‌پذیری، بهینه‌سازی هزینه‌ها و بهبود عملکرد زنجیره تأمین باشد.</p></section><section id="profile-6" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">06</div><h2>۶. صنایع و کالاهای تحت پوشش</h2><p>FARA TransLog راهکارهای لجستیکی خود را متناسب با نیاز صنایع و گروه‌های مختلف کالایی طراحی می‌کند</p><ul><li>معدنی و فلزی: سنگ‌آهن، کرومیت، فروسیلیس، مولیبدن و کنسانتره</li><li>نفت، گاز و پتروشیمی: گازوئیل، LPG، قیر و محصولات پتروشیمی</li><li>صنعتی و تولیدی: ماشین‌آلات، تجهیزات و قطعات صنعتی</li><li>ساختمانی: سیمان، کلینکر، فولاد و مصالح ساختمانی</li><li>کشاورزی: غلات، نهاده‌ها و محصولات کشاورزی</li><li>کالاهای عمومی: مواد اولیه و کالاهای بسته‌بندی و تجاری</li></ul></section><section id="profile-7" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">07</div><h2>۷ مزیت‌های رقابتی و رویکرد کاری FARA TransLog</h2><p>آنچه در فعالیت لجستیکی اهمیت دارد، صرفا انتخاب وسیله حمل نیست؛ بلکه شناخت مسیر، مدیریت هزینه، هماهنگی عوامل اجرایی و تعهد به برنامه حمل است.</p><p>رویکرد کاری ما بر پایه اصول زیر شکل گرفته است:</p><h3>راهکارهای متناسب با نیاز مشتری:</h3><p>انتخاب روش حمل بر اساس نوع کالا، مقصد، زمان و بودجه.</p><p>هماهنگی مراحل مختلف جابه‌جایی کالا در یک ساختار منسجم.</p><h3>نگاه بین‌المللی:</h3><p>بهره‌گیری از ظرفیت مسیرها و شبکه‌های حمل‌ونقل منطقه‌ای و جهانی.</p><h3>توجه به امنیت محموله:</h3><p>انتخاب روش‌های مناسب حمل، بسته‌بندی و حفاظت از کالا.</p><h3>مدیریت زمان و هزینه:</h3><p>تلاش برای کاهش هزینه‌های غیرضروری و بهبود زمان تحویل.</p><h3>شفافیت در فرآیند اجرا:</h3><p>اطلاع‌رسانی و هماهنگی در مراحل مختلف عملیات حمل.</p></section><section id="profile-8" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">08</div><h2>۸ چشم‌انداز ما</h2><p>چشم‌انداز ما تبدیل‌شدن به مجموعه‌ای توانمند و قابل اتکا در حوزه لجستیک و حمل‌ونقل بین‌المللی است؛ مجموعه‌ای که با توسعه ارتباطات تجاری، گسترش شبکه همکاری‌های منطقه‌ای و بین‌المللی و بهره‌گیری از ظرفیت‌های متنوع حمل‌ونقل، نقش موثری در تسهیل تجارت و توسعه زنجیره تأمین ایفا کند.</p><p>ما باور داریم آینده تجارت متعلق به مجموعه‌هایی است که مرزهای جغرافیایی را به مسیرهای ارتباطی تبدیل می‌کنند و با نگاه حرفه‌ای، دانش لجستیکی و همکاری پایدار، امکان دسترسی به بازارهای تازه را فراهم می‌سازند.</p><p>FARA TransLog؛ فراتر از جابه‌جایی کالا، همراه در مسیر توسعه تجارت جهانی.</p></section><section id="profile-9" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">09</div><h2>۹. دعوت به همکاری و ارتباط با ما</h2><p>اگر برای صادرات، واردات، ترانزیت یا حمل محموله‌های تجاری، صنعتی و پروژه‌ای خود به راهکار حمل‌ونقل مطمئن نیاز دارید، کارشناسان FARA TransLog آماده بررسی نیازهای شما و ارائه پیشنهاد متناسب با مسیر و نوع محموله هستند.</p><p>FARA TransLog | فراتر از مرزها، هم‌مسیر با آینده</p></section></article></div></section>
 
   <section class="section sector-start" id="start">
     <div class="copy">
@@ -82,8 +60,6 @@
     <ol><li><span>۰1</span>مبدأ و مقصد محموله</li><li><span>۰2</span>نوع کالا، وزن و ابعاد</li><li><span>۰3</span>زمان‌بندی و شیوه حمل مورد نظر</li></ol>
   </section>
 
-  <section class="section catalogue" id="catalogue"><div class="section-label">معرفی و مستندات</div><h2>معرفی خدمات حمل‌ونقل و لجستیک</h2><p>فایل اصلی معرفی این حوزه را در ادامه مطالعه کنید یا برای مشاهده در صفحهٔ جدا باز کنید.</p><div class="catalogue-actions"><a class="button" href="../documents/logistics.pdf" target="_blank" rel="noopener">مشاهده PDF در صفحهٔ جدا ↗</a><a class="button-ghost" href="../documents/logistics.pdf" download>دانلود فایل PDF ↓</a></div><object data="../documents/logistics.pdf" type="application/pdf" width="100%" height="760" aria-label="معرفی خدمات حمل‌ونقل و لجستیک"><p>برای مشاهدهٔ فایل، <a href="../documents/logistics.pdf" target="_blank" rel="noopener">PDF را باز کنید</a>.</p></object></section>
-
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>
     <div class="related-grid"><a href="mining.html"><span class="thumb"><img src="../assets/mining.webp" alt="تجهیزات صنایع معدنی" width="840" height="472" loading="lazy" decoding="async"></span><strong>تجهیزات صنایع معدنی</strong></a><a href="trade.html"><span class="thumb"><img src="../assets/trade.webp" alt="صادرات و واردات" width="840" height="472" loading="lazy" decoding="async"></span><strong>صادرات و واردات</strong></a><a href="energy.html"><span class="thumb"><img src="../assets/energy.webp" alt="نفت، گاز و پتروشیمی" width="840" height="472" loading="lazy" decoding="async"></span><strong>نفت، گاز و پتروشیمی</strong></a><a href="textiles.html"><span class="thumb"><img src="../assets/textiles.webp" alt="نساجی و منسوجات" width="840" height="472" loading="lazy" decoding="async"></span><strong>نساجی و منسوجات</strong></a><a href="real-estate.html"><span class="thumb"><img src="../assets/real-estate.webp" alt="عمران و سرمایه‌گذاری ملکی" width="840" height="472" loading="lazy" decoding="async"></span><strong>عمران و سرمایه‌گذاری ملکی</strong></a><a href="agriculture.html"><span class="thumb"><img src="../assets/agriculture.webp" alt="کشاورزی و کشت و صنعت" width="840" height="472" loading="lazy" decoding="async"></span><strong>کشاورزی و کشت و صنعت</strong></a></div>
@@ -91,18 +67,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <a href="../index.html" class="brand">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <p>فرا؛ فراتر از مرزها، هم‌مسیر با آینده</p>
-  <a class="top" href="#">بازگشت به بالا ↑</a>
-  <div class="footer-bottom">
-    <span>گروه بین‌المللی فرا · تمامی حقوق محفوظ است.</span>
-    <span dir="ltr">FARA INTERNATIONAL GROUP</span>
-  </div>
-</footer>
-<script src="../sector.js"></script>
+<footer class="fara-footer" id="contact"><div class="fara-footer-inner"><div class="fara-footer-contact"><h2>مسیر تجارت شما، تخصص ماست</h2><p>اگر برای صادرات، واردات، ترانزیت یا حمل محموله‌های تجاری، صنعتی و پروژه‌ای خود به راهکار حمل‌ونقل مطمئن نیاز دارید، کارشناسان FARA TransLog آمادهٔ بررسی نیازهای شما و ارائهٔ پیشنهاد متناسب با مسیر و نوع محموله هستند.</p><a href="../sectors/logistics.html#start">با ما در ارتباط باشید <span aria-hidden="true">←</span></a></div><div class="fara-footer-vision"><h2>چشم‌انداز ما</h2><p>تبدیل شدن به مجموعه‌ای پیشرو و قابل اتکا در حوزهٔ لجستیک و حمل‌ونقل بین‌المللی؛ با توسعهٔ ارتباطات تجاری و بهره‌گیری از ظرفیت‌های متنوع حمل‌ونقل، نقش مؤثری در تسهیل تجارت و توسعهٔ زنجیرهٔ تأمین ایفا کنیم.</p><strong><span lang="en" dir="ltr">FARA TransLog</span>؛ فراتر از جابه‌جایی کالا، همراه در مسیر توسعهٔ تجارت جهانی.</strong></div></div></footer>
+<script src="../navigation.js" defer></script>
 </body>
 </html>

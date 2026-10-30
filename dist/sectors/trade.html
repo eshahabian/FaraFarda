@@ -9,24 +9,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../sector.css?v=3">
+<link rel="stylesheet" href="../navigation.css?v=1">
+<link rel="stylesheet" href="../footer.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="../index.html" class="brand" aria-label="فرا، صفحه اصلی">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <nav class="site-nav" aria-label="منوی اصلی">
-    <a href="../index.html">صفحه اصلی</a>
-    <a href="../index.html#sectors">حوزه‌های فعالیت</a>
-    <a href="#services">دامنه فعالیت</a>
-    <a href="#start">شروع همکاری</a>
-  </nav>
-  <a class="header-cta" href="#start">مسیر همکاری <span>↖</span></a>
-  <button id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+<header class="fara-header" data-navigation>
+  <div class="fara-mainbar">
+    <a class="fara-brand" href="../index.html" aria-label="گروه بین‌المللی فرا، صفحه اصلی"><img src="../assets/logo.png" alt="نشان فرا" width="82" height="44"><span>گروه بین‌المللی فرا<small lang="en" dir="ltr">FARA INTERNATIONAL GROUP</small></span></a>
+    <button class="fara-menu-toggle" type="button" aria-controls="fara-primary" aria-expanded="false"><span class="fara-menu-lines" aria-hidden="true"></span><span data-menu-label>منو</span></button>
+
+  </div>
+  <nav class="fara-sector-strip" id="fara-primary" aria-label="منوی اصلی"><div><a href="../index.html">صفحهٔ اصلی</a><a href="../sectors/mining.html">تجهیزات صنایع معدنی</a><a href="../sectors/logistics.html">حمل‌ونقل و لجستیک</a><a href="../sectors/trade.html" aria-current="page">صادرات و واردات</a><a href="../sectors/energy.html">نفت، گاز و پتروشیمی</a><a href="../sectors/textiles.html">نساجی و منسوجات</a><a href="../sectors/real-estate.html">عمران و سرمایه‌گذاری ملکی</a><a href="../sectors/agriculture.html">کشاورزی و کشت و صنعت</a></div></nav>
 </header>
 
 <main>
@@ -46,32 +43,13 @@
       <p class="lead">صادرات و واردات کالا، تأمین مواد اولیه و محصولات صنعتی، شناسایی بازارهای هدف و توسعه ارتباطات تجاری میان تولیدکنندگان، تأمین‌کنندگان و خریداران در بازارهای منطقه‌ای و جهانی.</p>
       <div class="hero-actions">
         <a class="button" href="#start">آغاز گفت‌وگوی همکاری <span>↙</span></a>
-        <a class="button-ghost" href="#services">مشاهده دامنه فعالیت</a>
+        <a class="button-ghost" href="#profile">معرفی و شرح فعالیت‌ها</a>
       </div>
       <div class="trust-row"><span>صادرات و واردات</span><span>تأمین صنعتی</span><span>توسعه بازار</span></div>
     </div>
   </section>
 
-  <section class="section sector-intro">
-    <div class="copy">
-      <div class="section-label"><span>نگاه عملیاتی</span><span dir="ltr">HOW WE WORK</span></div>
-      <h2>پیوند تولیدکننده، تأمین‌کننده و بازار.</h2>
-      <p>نیاز بازار را به تأمین واقعی وصل می‌کنیم؛ از شناسایی فرصت تا شکل‌گیری همکاری تجاری پایدار.</p>
-    </div>
-    <figure class="intro-figure">
-      <img src="../assets/trade.webp" alt="صادرات و واردات" width="1200" height="900" loading="lazy" decoding="async">
-      <figcaption class="intro-caption">صادرات و واردات · گروه بین‌المللی فرا</figcaption>
-    </figure>
-  </section>
-
-  <section class="section sector-services" id="services">
-    <div class="head">
-      <div class="section-label"><span>دامنه فعالیت</span><span dir="ltr">SCOPE OF ACTIVITIES</span></div>
-      <h2>خدمات این حوزه، <em>متناسب با نیاز شما.</em></h2>
-      <p>سه محور اصلی فعالیت در این بخش؛ برای تعریف دقیق‌تر همکاری، از بخش شروع گفت‌وگو استفاده کنید.</p>
-    </div>
-    <div class="service-grid"><article><b>۰1</b><h3>صادرات و واردات</h3><p>تجارت کالا و توسعه ارتباطات در بازارهای منطقه‌ای و جهانی.</p></article><article><b>۰2</b><h3>تأمین صنعتی</h3><p>تأمین مواد اولیه و محصولات مورد نیاز صنایع.</p></article><article><b>۰3</b><h3>توسعه بازار</h3><p>شناسایی بازارهای هدف و پیوند تولیدکنندگان، تأمین‌کنندگان و خریداران.</p></article></div>
-  </section>
+  <section class="profile-section" id="profile"><div class="profile-layout"><aside class="profile-contents"><span>در این صفحه می‌خوانید</span><h2>صادرات و واردات گروه بین‌المللی فرا</h2><nav aria-label="فهرست مطالب این حوزه"><a href="#profile-1">صادرات و واردات گروه بین‌المللی فرا</a><a href="#profile-2">۱. صادرات کالا و محصولات</a><a href="#profile-3">۲ واردات و تأمین کالا</a><a href="#profile-4">۳ تجارت مواد معدنی و فلزات</a><a href="#profile-5">۴ تجارت نفت، گاز و محصولات پتروشیمی</a><a href="#profile-6">۵. تأمین مواد اولیه و تجهیزات صنعتی</a><a href="#profile-7">۶. توسعه بازارهای بین‌المللی و شناسایی فرصت‌های تجاری</a><a href="#profile-8">خدمات بازرگانی گروه فرا</a><a href="#profile-9">اصول و ارزش‌های ما</a><a href="#profile-10">چرا گروه بین‌المللی فرا؟</a><a href="#profile-11">دعوت به همکاری</a></nav><a class="profile-back" href="../index.html#sectors">همهٔ حوزه‌های فعالیت ←</a></aside><article class="profile-article" aria-label="صادرات و واردات گروه بین‌المللی فرا"><section id="profile-1" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">01</div><h2>صادرات و واردات گروه بین‌المللی فرا</h2><h3>صادرات و واردات گروه بین‌المللی فرا</h3><p>فراتر از مرزها، هم‌مسیر با آینده</p><h3>معرفی واحد بازرگانی و تجارت بین‌الملل</h3><p>در دنیای امروز، تجارت بین‌الملل یکی از مهم‌ترین پیشران‌های توسعه اقتصادی و صنعتی است. موفقیت در این عرصه، تنها به خریدوفروش کالا محدود نمی‌شود؛ بلکه به شناخت بازارها، دسترسی به منابع تأمین، توسعه شبکه‌های تجاری، مدیریت زنجیره تأمین و ایجاد همکاری‌های پایدار میان فعالان اقتصادی وابسته است.</p><p>گروه بین‌المللی فرا (FARA INTERNATIONAL GROUP) با رویکردی توسعه‌محور و نگاهی فرامرزی، در حوزه صادرات، واردات، تأمین کالا و توسعه تجارت بین‌الملل فعالیت می‌کند. هدف ما، ایجاد ارتباط موثر میان تولیدکنندگان، تأمین‌کنندگان، صنایع، خریداران و سرمایه‌گذاران و فراهم‌کردن زمینه توسعه مبادلات تجاری در بازارهای منطقه‌ای و بین‌المللی است.</p><p>ما با بهره‌گیری از ظرفیت‌های تجاری، صنعتی و لجستیکی مجموعه و با تمرکز بر شناسایی فرصت‌های اقتصادی، در مسیر تسهیل مبادلات، تأمین نیازهای بازار و توسعه همکاری‌های تجاری گام برمی‌داریم.</p><p>در گروه فرا، تجارت صرفا یک معامله نیست؛ بلکه فرایندی برای ایجاد ارزش، پیوند ظرفیت‌ها و شکل‌دادن به فرصت‌های پایدار اقتصادی است.</p></section><section id="profile-2" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">02</div><h2>۱. صادرات کالا و محصولات</h2><p>توسعه بازارهای صادراتی و ایجاد مسیرهای تجاری پایدار برای عرضه کالاها و محصولات ایرانی در بازارهای هدف، از محورهای فعالیت گروه بین‌المللی فراست.</p><p>این حوزه شامل شناسایی خریداران خارجی، بررسی فرصت‌های صادراتی، ارزیابی نیاز بازارهای مقصد، مذاکره با طرف‌های تجاری و هماهنگی فرایندهای بازرگانی و تحویل کالا، متناسب با نوع محصول و الزامات هر بازار است.</p><p>رویکرد ما، ایجاد ارتباط میان ظرفیت‌های تولیدی و فرصت‌های بازارهای بین‌المللی و توسعه روابط تجاری بلندمدت است.</p></section><section id="profile-3" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">03</div><h2>۲ واردات و تأمین کالا</h2><p>تأمین کالاها، مواد اولیه، تجهیزات و محصولات موردنیاز صنایع و فعالان اقتصادی از منابع داخلی و خارجی، یکی از زمینه‌های فعالیت بازرگانی گروه فراست.</p><p>در این بخش، فرایندهایی مانند شناسایی تولیدکنندگان و تأمین‌کنندگان، بررسی مشخصات فنی کالا، دریافت و ارزیابی پیشنهادهای تجاری، مذاکره درباره شرایط خرید، بررسی الزامات وارداتی و هماهنگی حمل و تحویل کالا دنبال می‌شود.</p><p>هدف ما، ایجاد مسیری منسجم برای تأمین نیازهای مشتریان و برقراری ارتباط میان تقاضای بازار و ظرفیت‌های تأمین در داخل و خارج از کشور است.</p></section><section id="profile-4" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">04</div><h2>۳ تجارت مواد معدنی و فلزات</h2><p>مواد معدنی و محصولات فلزی از بخش‌های مهم تجارت بین‌الملل و زنجیره تأمین صنایع هستند. گروه بین‌المللی فرا با توجه به ظرفیت‌های معدنی و صنعتی منطقه، تجارت این گروه از محصولات را در چارچوب فرصت‌های بازار و نیاز مشتریان دنبال می‌کند.</p><p>حوزه‌های مورد توجه عبارت‌اند از:</p><ul><li>مواد معدنی و کنسانتره‌های معدنی</li><li>محصولات و مواد اولیه صنایع فلزی</li><li>فروآلیاژها و مواد موردنیاز صنایع فولاد</li><li>مواد اولیه مورد استفاده در صنایع معدنی و فرآوری</li><li>سایر محصولات معدنی و صنعتی متناسب با ظرفیت‌های تأمین و تقاضای بازار</li></ul><p>شناسایی منابع تأمین، بررسی مشخصات فنی و آنالیز محصولات، تطبیق نیاز خریداران با ظرفیت عرضه و هماهنگی شرایط تجاری، از محورهای فعالیت این بخش است.</p></section><section id="profile-5" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">05</div><h2>۴ تجارت نفت، گاز و محصولات پتروشیمی</h2><p>تأمین و تجارت محصولات حوزه انرژی، مواد اولیه صنعتی و محصولات پتروشیمی، از زمینه‌های تخصصی قابل توسعه در شبکه بازرگانی گروه بین‌المللی فراست.</p><p>این حوزه، متناسب با ظرفیت‌های تأمین و الزامات قانونی و تجاری، می‌تواند شامل فعالیت‌های زیر باشد:</p><ul><li>تجارت فرآورده‌های نفتی و محصولات مرتبط</li><li>تأمین مواد اولیه موردنیاز صنایع پتروشیمی</li><li>صادرات و واردات محصولات پتروشیمی</li><li>تأمین مواد شیمیایی و مواد اولیه صنعتی</li><li>بازرگانی تجهیزات و ملزومات موردنیاز صنایع نفت، گاز و پتروشیمی</li></ul><p>در این بخش، توجه به مشخصات فنی، استانداردهای کیفی، اسناد تجاری، الزامات حمل و نگهداری و مقررات صادرات و واردات، متناسب با ماهیت هر محصول، اهمیت ویژه‌ای دارد.</p></section><section id="profile-6" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">06</div><h2>۵. تأمین مواد اولیه و تجهیزات صنعتی</h2><p>تداوم فعالیت صنایع و واحدهای تولیدی، به دسترسی مطمئن به مواد اولیه، قطعات، تجهیزات و ماشین‌آلات موردنیاز وابسته است.</p><p>گروه فرا با رویکردی مبتنی بر نیازسنجی و توسعه ارتباط با منابع تأمین، در زمینه شناسایی و تأمین اقلام صنعتی و تولیدی فعالیت می‌کند.</p><p>این حوزه می‌تواند شامل مواد اولیه تولید، قطعات و تجهیزات صنعتی، ماشین‌آلات و ملزومات خطوط تولید و فرآوری و سایر اقلام موردنیاز پروژه‌های صنعتی باشد.</p><p>تمرکز بر تطبیق مشخصات کالا با نیاز خریدار، بررسی شرایط تأمین و هماهنگی فرایندهای تجاری، از اصول فعالیت در این بخش است.</p></section><section id="profile-7" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">07</div><h2>۶. توسعه بازارهای بین‌المللی و شناسایی فرصت‌های تجاری</h2><p>ورود موفق به بازارهای جدید، نیازمند شناخت ظرفیت‌های اقتصادی، بررسی تقاضا، شناسایی شرکای تجاری و درک الزامات بازار مقصد است.</p><p>گروه بین‌المللی فرا با رویکردی مبتنی بر توسعه روابط تجاری، به دنبال شناسایی فرصت‌های صادراتی و وارداتی، ایجاد ارتباط میان عرضه‌کنندگان و متقاضیان و گسترش شبکه همکاری‌های منطقه‌ای و بین‌المللی است.</p><p>این رویکرد با هدف توسعه بازار، ایجاد مسیرهای جدید مبادلات تجاری و فراهم‌کردن زمینه همکاری میان شرکت‌ها و فعالان اقتصادی دنبال می‌شود.</p></section><section id="profile-8" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">08</div><h2>خدمات بازرگانی گروه فرا</h2><p>فعالیت حرفه‌ای در تجارت بین‌الملل، مستلزم هماهنگی مجموعه‌ای از فرایندهای تخصصی است. گروه فرا متناسب با ماهیت هر پروژه و در چارچوب ظرفیت‌های اجرایی خود، در زمینه‌های زیر فعالیت می‌کند:</p><ul><li>شناسایی و ارزیابی منابع تأمین: بررسی ظرفیت تولیدکنندگان و تأمین‌کنندگان و ارزیابی پیشنهادهای تجاری متناسب با نیاز مشتری.</li><li>مذاکرات و توافق‌های تجاری: پیگیری مذاکرات مربوط به قیمت، مشخصات کالا، حجم سفارش، شرایط پرداخت، زمان‌بندی و نحوه تحویل.</li><li>هماهنگی اسناد و الزامات بازرگانی: بررسی و هماهنگی اسناد تجاری و الزامات مرتبط با صادرات و واردات، متناسب با نوع کالا و مقررات مربوط.</li><li>هماهنگی حمل‌ونقل و تحویل کالا: ایجاد ارتباط میان فرایندهای بازرگانی و خدمات حمل‌ونقل و لجستیک برای مدیریت منسجم‌تر جریان کالا.</li><li>توسعه همکاری‌های تجاری: ایجاد ارتباط میان خریداران، فروشندگان، تولیدکنندگان و سایر فعالان اقتصادی با هدف شکل‌گیری همکاری‌های بلندمدت.</li><li>پشتیبانی از پروژه‌های تأمین: بررسی نیازهای تجاری پروژه‌ها و هماهنگی میان منابع تأمین، الزامات فنی و شرایط اجرایی سفارش.</li></ul><h3>تجارت یکپارچه؛ از تأمین تا تحویل</h3><p>یکی از ویژگی‌های ساختار گروه بین‌المللی فرا، امکان هم‌افزایی میان حوزه‌های مختلف فعالیت مجموعه است.</p><p>ارتباط میان واحد بازرگانی و بخش لجستیک و حمل‌ونقل، در کنار ظرفیت‌های حوزه معدن و صنایع و بخش نفت، گاز و پتروشیمی، زمینه بررسی جامع‌تر نیازهای تجاری و هماهنگی میان مراحل مختلف تأمین و انتقال کالا را فراهم می‌کند.</p><p>این ساختار با هدف کاهش پراکندگی فرایندها، بهبود هماهنگی عملیاتی و ایجاد ارزش افزوده در مسیر تجارت شکل گرفته است.</p><p>ما تلاش می‌کنیم نیاز مشتری را تنها از منظر خرید یک کالا بررسی نکنیم، بلکه با درنظرگرفتن مبدأ تأمین، مشخصات محصول، الزامات قراردادی، مسیر حمل و شرایط تحویل، راهکاری متناسب با نیاز هر معامله ارائه دهیم.</p></section><section id="profile-9" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">09</div><h2>اصول و ارزش‌های ما</h2><p>فعالیت‌های بازرگانی گروه بین‌المللی فرا بر مجموعه‌ای از اصول حرفه‌ای استوار است:</p><ul><li>شفافیت در معاملات: توجه به وضوح شرایط تجاری، تعهدات قراردادی و مسئولیت‌های طرفین.</li><li>شناخت دقیق نیاز مشتری: بررسی مشخصات کالا، حجم سفارش و الزامات بازار هدف پیش از انتخاب مسیر تأمین.</li><li>توجه به کیفیت و استانداردها: اهمیت‌دادن به مشخصات فنی، اسناد کیفی و الزامات مربوط به هر محصول.</li><li>مدیریت هماهنگ فرایندها: ایجاد ارتباط موثر میان تأمین، بازرگانی، حمل‌ونقل و تحویل کالا.</li><li>نگاه بین‌المللی: شناسایی فرصت‌های تجاری فرامرزی و توسعه ارتباط با بازارها و شرکای جدید.</li></ul></section><section id="profile-10" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">10</div><h2>چرا گروه بین‌المللی فرا؟</h2><p>در تجارت بین‌الملل، مزیت رقابتی تنها به قیمت یا دسترسی به کالا وابسته نیست؛ بلکه توانایی شناخت فرصت‌ها، ایجاد ارتباطات موثر، هماهنگی منابع و مدیریت صحیح فرایندهای تجاری نیز نقشی تعیین‌کننده دارد.</p><p>گروه بین‌المللی فرا با برخورداری از ساختاری چندبخشی و نگاهی فراتر از مرزهای جغرافیایی، به دنبال ایجاد پیوند میان ظرفیت‌های تجاری، صنعتی و لجستیکی و تبدیل فرصت‌های اقتصادی به همکاری‌های عملی است.</p><p>رویکرد ما بر شناخت نیاز بازار، توسعه ارتباطات حرفه‌ای، توجه به الزامات هر معامله و ایجاد زمینه همکاری‌های بلندمدت استوار است.</p></section><section id="profile-11" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">11</div><h2>دعوت به همکاری</h2><p>گروه بین‌المللی فرا از همکاری با تولیدکنندگان، تأمین‌کنندگان، شرکت‌های بازرگانی، خریداران صنعتی، توزیع‌کنندگان و سرمایه‌گذاران داخلی و خارجی در چارچوب حوزه‌های فعالیت خود استقبال می‌کند.</p><p>چنانچه در زمینه صادرات محصولات، واردات کالا، تأمین مواد اولیه و تجهیزات صنعتی یا توسعه همکاری‌های تجاری بین‌المللی فعالیت دارید، آماده بررسی فرصت‌های مشترک و پیشنهادهای تجاری شما هستیم.</p><p>ما باور داریم که همکاری‌های موفق، از شناخت ظرفیت‌ها آغاز می‌شوند و با اعتماد متقابل، برنامه‌ریزی دقیق و تعهد حرفه‌ای به نتایج پایدار می‌رسند.</p><h3>گروه بین‌المللی فرا</h3><p>فراتر از مرزها، هم‌مسیر با آینده</p></section></article></div></section>
 
   <section class="section sector-start" id="start">
     <div class="copy">
@@ -82,8 +60,6 @@
     <ol><li><span>۰1</span>نوع کالا و مشخصات آن</li><li><span>۰2</span>حجم تأمین و بازار هدف</li><li><span>۰3</span>زمان‌بندی و الزامات تجاری</li></ol>
   </section>
 
-  <section class="section catalogue" id="catalogue"><div class="section-label">معرفی و مستندات</div><h2>صادرات و واردات گروه بین‌المللی فرا</h2><p>فایل اصلی معرفی این حوزه را در ادامه مطالعه کنید یا برای مشاهده در صفحهٔ جدا باز کنید.</p><div class="catalogue-actions"><a class="button" href="../documents/trade.pdf" target="_blank" rel="noopener">مشاهده PDF در صفحهٔ جدا ↗</a><a class="button-ghost" href="../documents/trade.pdf" download>دانلود فایل PDF ↓</a></div><object data="../documents/trade.pdf" type="application/pdf" width="100%" height="760" aria-label="صادرات و واردات گروه بین‌المللی فرا"><p>برای مشاهدهٔ فایل، <a href="../documents/trade.pdf" target="_blank" rel="noopener">PDF را باز کنید</a>.</p></object></section>
-
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>
     <div class="related-grid"><a href="mining.html"><span class="thumb"><img src="../assets/mining.webp" alt="تجهیزات صنایع معدنی" width="840" height="472" loading="lazy" decoding="async"></span><strong>تجهیزات صنایع معدنی</strong></a><a href="logistics.html"><span class="thumb"><img src="../assets/logistics.webp" alt="حمل‌ونقل و لجستیک" width="840" height="472" loading="lazy" decoding="async"></span><strong>حمل‌ونقل و لجستیک</strong></a><a href="energy.html"><span class="thumb"><img src="../assets/energy.webp" alt="نفت، گاز و پتروشیمی" width="840" height="472" loading="lazy" decoding="async"></span><strong>نفت، گاز و پتروشیمی</strong></a><a href="textiles.html"><span class="thumb"><img src="../assets/textiles.webp" alt="نساجی و منسوجات" width="840" height="472" loading="lazy" decoding="async"></span><strong>نساجی و منسوجات</strong></a><a href="real-estate.html"><span class="thumb"><img src="../assets/real-estate.webp" alt="عمران و سرمایه‌گذاری ملکی" width="840" height="472" loading="lazy" decoding="async"></span><strong>عمران و سرمایه‌گذاری ملکی</strong></a><a href="agriculture.html"><span class="thumb"><img src="../assets/agriculture.webp" alt="کشاورزی و کشت و صنعت" width="840" height="472" loading="lazy" decoding="async"></span><strong>کشاورزی و کشت و صنعت</strong></a></div>
@@ -91,18 +67,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <a href="../index.html" class="brand">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <p>فرا؛ فراتر از مرزها، هم‌مسیر با آینده</p>
-  <a class="top" href="#">بازگشت به بالا ↑</a>
-  <div class="footer-bottom">
-    <span>گروه بین‌المللی فرا · تمامی حقوق محفوظ است.</span>
-    <span dir="ltr">FARA INTERNATIONAL GROUP</span>
-  </div>
-</footer>
-<script src="../sector.js"></script>
+<footer class="fara-footer" id="contact"><div class="fara-footer-inner"><div class="fara-footer-contact"><h2>مسیر تجارت شما، تخصص ماست</h2><p>اگر برای صادرات، واردات، ترانزیت یا حمل محموله‌های تجاری، صنعتی و پروژه‌ای خود به راهکار حمل‌ونقل مطمئن نیاز دارید، کارشناسان FARA TransLog آمادهٔ بررسی نیازهای شما و ارائهٔ پیشنهاد متناسب با مسیر و نوع محموله هستند.</p><a href="../sectors/logistics.html#start">با ما در ارتباط باشید <span aria-hidden="true">←</span></a></div><div class="fara-footer-vision"><h2>چشم‌انداز ما</h2><p>تبدیل شدن به مجموعه‌ای پیشرو و قابل اتکا در حوزهٔ لجستیک و حمل‌ونقل بین‌المللی؛ با توسعهٔ ارتباطات تجاری و بهره‌گیری از ظرفیت‌های متنوع حمل‌ونقل، نقش مؤثری در تسهیل تجارت و توسعهٔ زنجیرهٔ تأمین ایفا کنیم.</p><strong><span lang="en" dir="ltr">FARA TransLog</span>؛ فراتر از جابه‌جایی کالا، همراه در مسیر توسعهٔ تجارت جهانی.</strong></div></div></footer>
+<script src="../navigation.js" defer></script>
 </body>
 </html>

@@ -9,24 +9,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../sector.css?v=3">
+<link rel="stylesheet" href="../navigation.css?v=1">
+<link rel="stylesheet" href="../footer.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="../index.html" class="brand" aria-label="فرا، صفحه اصلی">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <nav class="site-nav" aria-label="منوی اصلی">
-    <a href="../index.html">صفحه اصلی</a>
-    <a href="../index.html#sectors">حوزه‌های فعالیت</a>
-    <a href="#services">دامنه فعالیت</a>
-    <a href="#start">شروع همکاری</a>
-  </nav>
-  <a class="header-cta" href="#start">مسیر همکاری <span>↖</span></a>
-  <button id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+<header class="fara-header" data-navigation>
+  <div class="fara-mainbar">
+    <a class="fara-brand" href="../index.html" aria-label="گروه بین‌المللی فرا، صفحه اصلی"><img src="../assets/logo.png" alt="نشان فرا" width="82" height="44"><span>گروه بین‌المللی فرا<small lang="en" dir="ltr">FARA INTERNATIONAL GROUP</small></span></a>
+    <button class="fara-menu-toggle" type="button" aria-controls="fara-primary" aria-expanded="false"><span class="fara-menu-lines" aria-hidden="true"></span><span data-menu-label>منو</span></button>
+
+  </div>
+  <nav class="fara-sector-strip" id="fara-primary" aria-label="منوی اصلی"><div><a href="../index.html">صفحهٔ اصلی</a><a href="../sectors/mining.html">تجهیزات صنایع معدنی</a><a href="../sectors/logistics.html">حمل‌ونقل و لجستیک</a><a href="../sectors/trade.html">صادرات و واردات</a><a href="../sectors/energy.html">نفت، گاز و پتروشیمی</a><a href="../sectors/textiles.html">نساجی و منسوجات</a><a href="../sectors/real-estate.html" aria-current="page">عمران و سرمایه‌گذاری ملکی</a><a href="../sectors/agriculture.html">کشاورزی و کشت و صنعت</a></div></nav>
 </header>
 
 <main>
@@ -46,7 +43,7 @@
       <p class="lead">توسعه پروژه‌های عمرانی و ساختمانی، مشارکت در ساخت، سرمایه‌گذاری، خریدوفروش و مدیریت املاک و مستغلات، با هدف شناسایی فرصت‌های اقتصادی و ایجاد ارزش افزوده پایدار.</p>
       <div class="hero-actions">
         <a class="button" href="#start">آغاز گفت‌وگوی همکاری <span>↙</span></a>
-        <a class="button-ghost" href="#services">مشاهده دامنه فعالیت</a>
+        <a class="button-ghost" href="#services">معرفی و شرح فعالیت‌ها</a>
       </div>
       <div class="trust-row"><span>توسعه و ساخت</span><span>سرمایه‌گذاری ملکی</span><span>مدیریت املاک</span></div>
     </div>
@@ -82,8 +79,6 @@
     <ol><li><span>۰1</span>موقعیت و نوع ملک یا پروژه</li><li><span>۰2</span>مرحله فعلی و ابعاد پروژه</li><li><span>۰3</span>مدل مشارکت یا سرمایه‌گذاری مورد نظر</li></ol>
   </section>
 
-  
-
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>
     <div class="related-grid"><a href="mining.html"><span class="thumb"><img src="../assets/mining.webp" alt="تجهیزات صنایع معدنی" width="840" height="472" loading="lazy" decoding="async"></span><strong>تجهیزات صنایع معدنی</strong></a><a href="logistics.html"><span class="thumb"><img src="../assets/logistics.webp" alt="حمل‌ونقل و لجستیک" width="840" height="472" loading="lazy" decoding="async"></span><strong>حمل‌ونقل و لجستیک</strong></a><a href="trade.html"><span class="thumb"><img src="../assets/trade.webp" alt="صادرات و واردات" width="840" height="472" loading="lazy" decoding="async"></span><strong>صادرات و واردات</strong></a><a href="energy.html"><span class="thumb"><img src="../assets/energy.webp" alt="نفت، گاز و پتروشیمی" width="840" height="472" loading="lazy" decoding="async"></span><strong>نفت، گاز و پتروشیمی</strong></a><a href="textiles.html"><span class="thumb"><img src="../assets/textiles.webp" alt="نساجی و منسوجات" width="840" height="472" loading="lazy" decoding="async"></span><strong>نساجی و منسوجات</strong></a><a href="agriculture.html"><span class="thumb"><img src="../assets/agriculture.webp" alt="کشاورزی و کشت و صنعت" width="840" height="472" loading="lazy" decoding="async"></span><strong>کشاورزی و کشت و صنعت</strong></a></div>
@@ -91,18 +86,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <a href="../index.html" class="brand">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <p>فرا؛ فراتر از مرزها، هم‌مسیر با آینده</p>
-  <a class="top" href="#">بازگشت به بالا ↑</a>
-  <div class="footer-bottom">
-    <span>گروه بین‌المللی فرا · تمامی حقوق محفوظ است.</span>
-    <span dir="ltr">FARA INTERNATIONAL GROUP</span>
-  </div>
-</footer>
-<script src="../sector.js"></script>
+<footer class="fara-footer" id="contact"><div class="fara-footer-inner"><div class="fara-footer-contact"><h2>مسیر تجارت شما، تخصص ماست</h2><p>اگر برای صادرات، واردات، ترانزیت یا حمل محموله‌های تجاری، صنعتی و پروژه‌ای خود به راهکار حمل‌ونقل مطمئن نیاز دارید، کارشناسان FARA TransLog آمادهٔ بررسی نیازهای شما و ارائهٔ پیشنهاد متناسب با مسیر و نوع محموله هستند.</p><a href="../sectors/logistics.html#start">با ما در ارتباط باشید <span aria-hidden="true">←</span></a></div><div class="fara-footer-vision"><h2>چشم‌انداز ما</h2><p>تبدیل شدن به مجموعه‌ای پیشرو و قابل اتکا در حوزهٔ لجستیک و حمل‌ونقل بین‌المللی؛ با توسعهٔ ارتباطات تجاری و بهره‌گیری از ظرفیت‌های متنوع حمل‌ونقل، نقش مؤثری در تسهیل تجارت و توسعهٔ زنجیرهٔ تأمین ایفا کنیم.</p><strong><span lang="en" dir="ltr">FARA TransLog</span>؛ فراتر از جابه‌جایی کالا، همراه در مسیر توسعهٔ تجارت جهانی.</strong></div></div></footer>
+<script src="../navigation.js" defer></script>
 </body>
 </html>

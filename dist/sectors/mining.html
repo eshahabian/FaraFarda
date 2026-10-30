@@ -9,24 +9,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../sector.css?v=3">
+<link rel="stylesheet" href="../navigation.css?v=1">
+<link rel="stylesheet" href="../footer.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="../index.html" class="brand" aria-label="فرا، صفحه اصلی">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <nav class="site-nav" aria-label="منوی اصلی">
-    <a href="../index.html">صفحه اصلی</a>
-    <a href="../index.html#sectors">حوزه‌های فعالیت</a>
-    <a href="#services">دامنه فعالیت</a>
-    <a href="#start">شروع همکاری</a>
-  </nav>
-  <a class="header-cta" href="#start">مسیر همکاری <span>↖</span></a>
-  <button id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+<header class="fara-header" data-navigation>
+  <div class="fara-mainbar">
+    <a class="fara-brand" href="../index.html" aria-label="گروه بین‌المللی فرا، صفحه اصلی"><img src="../assets/logo.png" alt="نشان فرا" width="82" height="44"><span>گروه بین‌المللی فرا<small lang="en" dir="ltr">FARA INTERNATIONAL GROUP</small></span></a>
+    <button class="fara-menu-toggle" type="button" aria-controls="fara-primary" aria-expanded="false"><span class="fara-menu-lines" aria-hidden="true"></span><span data-menu-label>منو</span></button>
+
+  </div>
+  <nav class="fara-sector-strip" id="fara-primary" aria-label="منوی اصلی"><div><a href="../index.html">صفحهٔ اصلی</a><a href="../sectors/mining.html" aria-current="page">تجهیزات صنایع معدنی</a><a href="../sectors/logistics.html">حمل‌ونقل و لجستیک</a><a href="../sectors/trade.html">صادرات و واردات</a><a href="../sectors/energy.html">نفت، گاز و پتروشیمی</a><a href="../sectors/textiles.html">نساجی و منسوجات</a><a href="../sectors/real-estate.html">عمران و سرمایه‌گذاری ملکی</a><a href="../sectors/agriculture.html">کشاورزی و کشت و صنعت</a></div></nav>
 </header>
 
 <main>
@@ -46,32 +43,13 @@
       <p class="lead">تأمین ماشین‌آلات معادن و تجهیزات فرآوری مواد معدنی، شامل خطوط خردایش و دانه‌بندی، سنگ‌شکن، ماسه‌ساز، سرند و نوار نقاله، متناسب با نیازهای فنی و عملیاتی معادن و واحدهای صنعتی.</p>
       <div class="hero-actions">
         <a class="button" href="#start">آغاز گفت‌وگوی همکاری <span>↙</span></a>
-        <a class="button-ghost" href="#services">مشاهده دامنه فعالیت</a>
+        <a class="button-ghost" href="#profile">معرفی و شرح فعالیت‌ها</a>
       </div>
       <div class="trust-row"><span>ماشین‌آلات معادن</span><span>خردایش و دانه‌بندی</span><span>فرآوری و انتقال مواد</span></div>
     </div>
   </section>
 
-  <section class="section sector-intro">
-    <div class="copy">
-      <div class="section-label"><span>نگاه عملیاتی</span><span dir="ltr">HOW WE WORK</span></div>
-      <h2>تجهیزات متناسب با نیاز عملیاتی معادن.</h2>
-      <p>از تأمین ماشین‌آلات تا تجهیزات فرآوری، مسیر همکاری را بر اساس مشخصات فنی پروژه و ظرفیت عملیاتی معدن تعریف می‌کنیم.</p>
-    </div>
-    <figure class="intro-figure">
-      <img src="../assets/mining.webp" alt="تجهیزات صنایع معدنی" width="1200" height="900" loading="lazy" decoding="async">
-      <figcaption class="intro-caption">تجهیزات صنایع معدنی · گروه بین‌المللی فرا</figcaption>
-    </figure>
-  </section>
-
-  <section class="section sector-services" id="services">
-    <div class="head">
-      <div class="section-label"><span>دامنه فعالیت</span><span dir="ltr">SCOPE OF ACTIVITIES</span></div>
-      <h2>خدمات این حوزه، <em>متناسب با نیاز شما.</em></h2>
-      <p>سه محور اصلی فعالیت در این بخش؛ برای تعریف دقیق‌تر همکاری، از بخش شروع گفت‌وگو استفاده کنید.</p>
-    </div>
-    <div class="service-grid"><article><b>۰1</b><h3>ماشین‌آلات معادن</h3><p>تأمین ماشین‌آلات متناسب با نیازهای فنی و عملیاتی معادن.</p></article><article><b>۰2</b><h3>خردایش و دانه‌بندی</h3><p>تأمین خطوط خردایش، سنگ‌شکن، ماسه‌ساز و سرند.</p></article><article><b>۰3</b><h3>فرآوری و انتقال مواد</h3><p>تجهیزات فرآوری مواد معدنی و نوار نقاله برای واحدهای صنعتی.</p></article></div>
-  </section>
+  <section class="profile-section" id="profile"><div class="profile-layout"><aside class="profile-contents"><span>در این صفحه می‌خوانید</span><h2>معرفی شرکت و فعالیت‌های تجهیزات معدنی</h2><nav aria-label="فهرست مطالب این حوزه"><a href="#profile-1">معرفی شرکت و فعالیت‌های تجهیزات معدنی</a><a href="#profile-2">حوزه‌های اصلی فعالیت</a><a href="#profile-3">استخراج تا فرآوری پیوند دانش فنی، توان ساخت و بازارهای بین‌المللی</a><a href="#profile-4">۱. ماشین‌آلات استخراج و بارگیری</a><a href="#profile-5">۲ ماشین‌آلات حفاری</a><a href="#profile-6">۳ تجهیزات خردایش و سنگ‌شکنی</a><a href="#profile-7">۴ تجهیزات سرند و دانه‌بندی</a><a href="#profile-8">۵. سیستم‌های انتقال مواد</a><a href="#profile-9">۷ تجهیزات فرآوری مواد معدنی</a><a href="#profile-10">۸ خطوط کامل خردایش و فرآوری</a><a href="#profile-11">۹. خدمات فنی و تأمین تجهیزات</a></nav><a class="profile-back" href="../index.html#sectors">همهٔ حوزه‌های فعالیت ←</a></aside><article class="profile-article" aria-label="معرفی شرکت و فعالیت‌های تجهیزات معدنی"><section id="profile-1" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">01</div><h2>معرفی شرکت و فعالیت‌های تجهیزات معدنی</h2><p>گروه بین‌المللی فرا با رویکردی تخصصی و بین‌المللی، در زمینه توسعه راهکارهای صنعتی، هماهنگی طراحی و ساخت، انتقال دانش فنی و تأمین ماشین‌آلات و تجهیزات موردنیاز معادن و صنایع فرآوری مواد معدنی فعالیت می‌کند.</p><p>با توجه به تنوع معادن، تفاوت شرایط عملیاتی و نیازهای فنی پروژه‌ها، انتخاب تجهیزات مناسب و ایجاد ارتباط میان توان مهندسی، ظرفیت‌های ساخت و منابع تأمین معتبر، نقشی اساسی در بهره‌وری و توسعه خطوط تولید دارد.</p><p>فرا با تکیه بر همکاری با سازندگان، تولیدکنندگان و تأمین‌کنندگان مختلف، امکان بررسی و تأمین تجهیزات متناسب با مشخصات فنی، ظرفیت تولید، شرایط اجرایی و نیازهای تجاری هر پروژه را فراهم می‌سازد.</p><p>حوزه فعالیت این بخش از ماشین‌آلات استخراج و حفاری آغاز می‌شود و تجهیزات خردایش، دانه‌بندی، انتقال مواد، شست‌وشو و فرآوری را در بر می‌گیرد. همچنین امکان هماهنگی برای تأمین تجهیزات و توسعه خطوط صنعتی یکپارچه، متناسب با نیاز پروژه، وجود دارد.</p></section><section id="profile-2" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">02</div><h2>حوزه‌های اصلی فعالیت</h2><ul><li>ماشین‌آلات استخراج و حفاری معادن</li><li>تجهیزات خردایش و سنگ‌شکنی</li><li>تجهیزات سرند، دانه‌بندی و طبقه‌بندی</li><li>سیستم‌های انتقال و جابه‌جایی مواد</li><li>تجهیزات شست‌وشو، آبگیری و فرآوری مواد معدنی</li><li>خطوط کامل خردایش، دانه‌بندی و آماده‌سازی مواد</li><li>هماهنگی طراحی، ساخت و تأمین تجهیزات سفارشی</li><li>توسعه همکاری‌های فنی و تجاری در بازارهای بین‌المللی</li></ul></section><section id="profile-3" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">03</div><h2>استخراج تا فرآوری پیوند دانش فنی، توان ساخت و بازارهای بین‌المللی</h2><p>گروه بین‌المللی فرا در زمینه توسعه راهکارهای صنعتی، هماهنگی طراحی و ساخت، انتقال دانش فنی و تأمین ماشین‌آلات و تجهیزات موردنیاز معادن و صنایع فرآوری مواد معدنی فعالیت می‌کند.</p><p>با همکاری سازندگان و تأمین‌کنندگان مختلف، تلاش می‌کنیم نیازهای فنی هر پروژه را شناسایی کرده و راهکارهایی متناسب با نوع ماده معدنی، ظرفیت تولید، شرایط عملیاتی و اهداف کارفرما ارائه دهیم.</p></section><section id="profile-4" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">04</div><h2>۱. ماشین‌آلات استخراج و بارگیری</h2><h3>بیل مکانیکی و تجهیزات بارگیری معدنی</h3><p>بیل‌های مکانیکی برای حفاری، برداشت مواد، بارگیری کامیون‌ها و عملیات خاک‌برداری در معادن استفاده می‌شوند.</p><p>انتخاب دستگاه به ظرفیت موردنیاز، نوع زمین، حجم عملیات و شرایط معدن بستگی دارد.</p><h3>لودرهای معدنی</h3><p>لودرها برای جابه‌جایی مواد، بارگیری سنگ و تغذیه سنگ‌شکن‌ها به کار می‌روند. ظرفیت باکت و توان دستگاه باید متناسب با حجم عملیات و تجهیزات خط تولید انتخاب شود.</p><h3>دامپتراک و تجهیزات حمل مواد معدنی</h3><p>دامپتراک‌ها برای حمل حجم بالای سنگ و مواد استخراج‌شده از جبهه معدن به محل تخلیه یا واحد خردایش استفاده می‌شوند. ظرفیت باربری و وضعیت مسیر از عوامل اصلی انتخاب آن‌هاست.</p></section><section id="profile-5" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">05</div><h2>۲ ماشین‌آلات حفاری</h2><h3>دستگاه‌های حفاری چال انفجاری</h3><p>این دستگاه‌ها برای ایجاد چال‌های موردنیاز عملیات انفجار در معادن روباز استفاده می‌شوند. نوع دستگاه بر اساس قطر و عمق حفاری، سختی سنگ و برنامه استخراج انتخاب می‌شود.</p><h3>دستگاه‌های حفاری اکتشافی</h3><p>حفاری اکتشافی برای بررسی ساختار زمین، نمونه‌برداری و ارزیابی ذخایر معدنی انجام می‌شود. تجهیزات مناسب با توجه به عمق موردنیاز، روش حفاری و نوع نمونه‌برداری تعیین می‌شوند.</p></section><section id="profile-6" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">06</div><h2>۳ تجهیزات خردایش و سنگ‌شکنی</h2><h3>سنگ‌شکن فکی</h3><p>سنگ‌شکن فکی عمدتا برای خردایش اولیه و کاهش ابعاد قطعات درشت سنگ استفاده می‌شود. این دستگاه معمولا در ابتدای خطوط خردایش معادن و کارخانه‌های تولید مصالح قرار می‌گیرد.</p><h3>سنگ‌شکن مخروطی</h3><p>سنگ‌شکن مخروطی برای خردایش ثانویه و ثالثیه به کار می‌رود و در بسیاری از خطوط معدنی برای تولید محصول با دانه‌بندی کنترل‌شده مورد استفاده قرار می‌گیرد.</p><h3>سنگ‌شکن ضربه‌ای</h3><p>این تجهیزات با استفاده از نیروی ضربه، مواد را خرد می‌کنند و در تولید مصالح و فرآوری برخی انواع سنگ کاربرد دارند.</p><p>انتخاب آن‌ها به ویژگی‌های فیزیکی و سایندگی خوراک وابسته است.</p><h3>ماسه‌ساز صنعتی</h3><p>ماسه‌سازها برای تولید ذرات ریزتر و بهبود شکل دانه‌ها در خطوط شن و ماسه و برخی کاربردهای فرآوری مواد معدنی استفاده می‌شوند.</p></section><section id="profile-7" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">07</div><h2>۴ تجهیزات سرند و دانه‌بندی</h2><h3>سرند ارتعاشی</h3><p>سرندهای ارتعاشی برای جداسازی مواد بر اساس اندازه ذرات استفاده می‌شوند. تعداد طبقات، ابعاد سطح سرند و اندازه چشمه‌ها با توجه به ظرفیت و دانه‌بندی موردنیاز انتخاب می‌شوند.</p><h3>فیدر ارتعاشی و گریزلی</h3><p>فیدرها جریان مواد را از هاپر به تجهیزات بعدی منتقل می‌کنند. مدل‌های گریزلی می‌توانند در مرحله اولیه، بخشی از مواد ریز را پیش از ورود خوراک به سنگ‌شکن جدا کنند.</p></section><section id="profile-8" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">08</div><h2>۵. سیستم‌های انتقال مواد</h2><h3>نوار نقاله</h3><p>نوار نقاله‌ها برای انتقال پیوسته سنگ، مواد خردشده و محصولات معدنی میان بخش‌های مختلف کارخانه استفاده می‌شوند. طول مسیر، ظرفیت انتقال و شرایط محیطی در طراحی آن‌ها اهمیت دارد.</p><h3>هاپر و شوت انتقال مواد</h3><p>هاپرها برای دریافت و ذخیره موقت مواد و شوت‌ها برای هدایت آن‌ها میان تجهیزات استفاده می‌شوند. طراحی مناسب این اجزا به جریان یکنواخت مواد و کاهش احتمال گرفتگی کمک می‌کند.</p><p>تجهیزات شست‌وشو و آبگیری</p><h3>ماسه‌شوی صنعتی</h3><p>ماسه‌شوی‌ها برای شست‌وشوی ماسه و مصالح و کاهش بخشی از ناخالصی‌های ناخواسته استفاده می‌شوند. انتخاب نوع دستگاه به کیفیت خوراک و مشخصات محصول نهایی بستگی دارد.</p><h3>سرند آبگیری</h3><p>سرندهای آبگیری برای کاهش رطوبت مواد شسته‌شده و جداسازی بخشی از آب همراه محصول به کار می‌روند.</p><h3>سامانه بازیابی آب</h3><p>سامانه‌های بازیابی آب با هدف جداسازی جامدات از آب فرایندی و امکان استفاده مجدد از آب در مدار تولید طراحی می‌شوند. ظرفیت، میزان جامدات و شرایط فرایند در انتخاب تجهیزات موثرند.</p></section><section id="profile-9" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">09</div><h2>۷ تجهیزات فرآوری مواد معدنی</h2><h3>آسیاب صنعتی</h3><p>آسیاب‌ها برای کاهش بیشتر اندازه ذرات و آماده‌سازی مواد جهت مراحل بعدی فرآوری استفاده می‌شوند. نوع آسیاب باید با ویژگی‌های ماده معدنی و ظرفیت تولید هماهنگ باشد.</p><h3>جداکنندهٔ مغناطیسی</h3><p>جداکننده‌های مغناطیسی برای تفکیک کانی‌های دارای خاصیت مغناطیسی از سایر مواد استفاده می‌شوند و در برخی مدارهای فرآوری سنگ‌آهن و مواد معدنی کاربرد دارند.</p><h3>تجهیزات جدایش ثقلی</h3><p>این تجهیزات با استفاده از اختلاف چگالی ذرات، به جداسازی برخی کانی‌ها و مواد معدنی کمک می‌کنند. انتخاب روش جدایش به ویژگی‌های ماده و نتایج آزمایش‌های فرآوری وابسته است.</p></section><section id="profile-10" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">10</div><h2>۸ خطوط کامل خردایش و فرآوری</h2><p>امکان هماهنگی برای تأمین تجهیزات و توسعه خطوط صنعتی یکپارچه، متناسب با نیاز پروژه، وجود دارد.</p></section><section id="profile-11" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">11</div><h2>۹. خدمات فنی و تأمین تجهیزات</h2><h3>هماهنگی فنی، طراحی و تأمین</h3><p>خدمات این بخش می‌تواند شامل بررسی نیازهای فنی، انتخاب تجهیزات، هماهنگی با سازندگان، پیگیری ساخت یا سفارشی‌سازی و تأمین ماشین‌آلات باشد. دامنه خدمات هر پروژه با توجه به توافق طرفین و امکانات فنی موردنیاز تعیین می‌شود.</p></section></article></div></section>
 
   <section class="section sector-start" id="start">
     <div class="copy">
@@ -82,8 +60,6 @@
     <ol><li><span>۰1</span>نوع ماده معدنی و ظرفیت مورد نیاز</li><li><span>۰2</span>تجهیزات یا بخش‌های مورد نیاز خط</li><li><span>۰3</span>مشخصات فنی و محل اجرای پروژه</li></ol>
   </section>
 
-  <section class="section catalogue" id="catalogue"><div class="section-label">معرفی و مستندات</div><h2>معرفی شرکت و فعالیت‌های تجهیزات معدنی</h2><p>فایل اصلی معرفی این حوزه را در ادامه مطالعه کنید یا برای مشاهده در صفحهٔ جدا باز کنید.</p><div class="catalogue-actions"><a class="button" href="../documents/mining.pdf" target="_blank" rel="noopener">مشاهده PDF در صفحهٔ جدا ↗</a><a class="button-ghost" href="../documents/mining.pdf" download>دانلود فایل PDF ↓</a></div><object data="../documents/mining.pdf" type="application/pdf" width="100%" height="760" aria-label="معرفی شرکت و فعالیت‌های تجهیزات معدنی"><p>برای مشاهدهٔ فایل، <a href="../documents/mining.pdf" target="_blank" rel="noopener">PDF را باز کنید</a>.</p></object></section>
-
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>
     <div class="related-grid"><a href="logistics.html"><span class="thumb"><img src="../assets/logistics.webp" alt="حمل‌ونقل و لجستیک" width="840" height="472" loading="lazy" decoding="async"></span><strong>حمل‌ونقل و لجستیک</strong></a><a href="trade.html"><span class="thumb"><img src="../assets/trade.webp" alt="صادرات و واردات" width="840" height="472" loading="lazy" decoding="async"></span><strong>صادرات و واردات</strong></a><a href="energy.html"><span class="thumb"><img src="../assets/energy.webp" alt="نفت، گاز و پتروشیمی" width="840" height="472" loading="lazy" decoding="async"></span><strong>نفت، گاز و پتروشیمی</strong></a><a href="textiles.html"><span class="thumb"><img src="../assets/textiles.webp" alt="نساجی و منسوجات" width="840" height="472" loading="lazy" decoding="async"></span><strong>نساجی و منسوجات</strong></a><a href="real-estate.html"><span class="thumb"><img src="../assets/real-estate.webp" alt="عمران و سرمایه‌گذاری ملکی" width="840" height="472" loading="lazy" decoding="async"></span><strong>عمران و سرمایه‌گذاری ملکی</strong></a><a href="agriculture.html"><span class="thumb"><img src="../assets/agriculture.webp" alt="کشاورزی و کشت و صنعت" width="840" height="472" loading="lazy" decoding="async"></span><strong>کشاورزی و کشت و صنعت</strong></a></div>
@@ -91,18 +67,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <a href="../index.html" class="brand">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <p>فرا؛ فراتر از مرزها، هم‌مسیر با آینده</p>
-  <a class="top" href="#">بازگشت به بالا ↑</a>
-  <div class="footer-bottom">
-    <span>گروه بین‌المللی فرا · تمامی حقوق محفوظ است.</span>
-    <span dir="ltr">FARA INTERNATIONAL GROUP</span>
-  </div>
-</footer>
-<script src="../sector.js"></script>
+<footer class="fara-footer" id="contact"><div class="fara-footer-inner"><div class="fara-footer-contact"><h2>مسیر تجارت شما، تخصص ماست</h2><p>اگر برای صادرات، واردات، ترانزیت یا حمل محموله‌های تجاری، صنعتی و پروژه‌ای خود به راهکار حمل‌ونقل مطمئن نیاز دارید، کارشناسان FARA TransLog آمادهٔ بررسی نیازهای شما و ارائهٔ پیشنهاد متناسب با مسیر و نوع محموله هستند.</p><a href="../sectors/logistics.html#start">با ما در ارتباط باشید <span aria-hidden="true">←</span></a></div><div class="fara-footer-vision"><h2>چشم‌انداز ما</h2><p>تبدیل شدن به مجموعه‌ای پیشرو و قابل اتکا در حوزهٔ لجستیک و حمل‌ونقل بین‌المللی؛ با توسعهٔ ارتباطات تجاری و بهره‌گیری از ظرفیت‌های متنوع حمل‌ونقل، نقش مؤثری در تسهیل تجارت و توسعهٔ زنجیرهٔ تأمین ایفا کنیم.</p><strong><span lang="en" dir="ltr">FARA TransLog</span>؛ فراتر از جابه‌جایی کالا، همراه در مسیر توسعهٔ تجارت جهانی.</strong></div></div></footer>
+<script src="../navigation.js" defer></script>
 </body>
 </html>

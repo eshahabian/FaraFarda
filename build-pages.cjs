@@ -1,5 +1,8 @@
 const fs = require('fs');
 const vm = require('vm');
+const { renderHeader } = require('./navigation.cjs');
+const { renderFooter } = require('./footer.cjs');
+const { renderProfile } = require('./profile-content.cjs');
 
 const app = fs.readFileSync('dist/app.js', 'utf8');
 const sectors = vm.runInNewContext(
@@ -80,11 +83,11 @@ const questions = [
   ['نوع طرح و موقعیت اجرای آن', 'منابع و ظرفیت تولید یا فرآوری', 'مدل سرمایه‌گذاری یا مشارکت مورد نظر']
 ];
 
-const catalogues = {"mining":"معرفی شرکت و فعالیت‌های تجهیزات معدنی","logistics":"معرفی خدمات حمل‌ونقل و لجستیک","trade":"صادرات و واردات گروه بین‌المللی فرا","energy":"نفت، گاز و پتروشیمی","agriculture":"کشاورزی و کشت و صنعت"};
 fs.mkdirSync('dist/sectors', { recursive: true });
 
 sectors.forEach((s, i) => {
   const title = i === 6 ? 'کشاورزی، کشت و صنعت و سرمایه‌گذاری‌های کشاورزی' : s[2];
+  const profile = renderProfile(slugs[i]);
   const next = (i + 1) % 7;
   const trust = features[i].map((f) => `<span>${f[0]}</span>`).join('');
   const services = features[i]
@@ -115,25 +118,15 @@ sectors.forEach((s, i) => {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../sector.css?v=3">
+<link rel="stylesheet" href="../navigation.css?v=1">
+<link rel="stylesheet" href="../footer.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="../index.html" class="brand" aria-label="فرا، صفحه اصلی">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <nav class="site-nav" aria-label="منوی اصلی">
-    <a href="../index.html">صفحه اصلی</a>
-    <a href="../index.html#sectors">حوزه‌های فعالیت</a>
-    <a href="#services">دامنه فعالیت</a>
-    <a href="#start">شروع همکاری</a>
-  </nav>
-  <a class="header-cta" href="#start">مسیر همکاری <span>↖</span></a>
-  <button id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
-</header>
+${renderHeader('../', slugs[i])}
 
 <main>
   <section class="sector-hero" aria-label="${title}">
@@ -152,13 +145,13 @@ sectors.forEach((s, i) => {
       <p class="lead">${s[4]}</p>
       <div class="hero-actions">
         <a class="button" href="#start">آغاز گفت‌وگوی همکاری <span>↙</span></a>
-        <a class="button-ghost" href="#services">مشاهده دامنه فعالیت</a>
+        <a class="button-ghost" href="#${profile ? 'profile' : 'services'}">معرفی و شرح فعالیت‌ها</a>
       </div>
       <div class="trust-row">${trust}</div>
     </div>
   </section>
 
-  <section class="section sector-intro">
+  ${profile || `<section class="section sector-intro">
     <div class="copy">
       <div class="section-label"><span>نگاه عملیاتی</span><span dir="ltr">HOW WE WORK</span></div>
       <h2>${headlines[i]}</h2>
@@ -177,7 +170,7 @@ sectors.forEach((s, i) => {
       <p>سه محور اصلی فعالیت در این بخش؛ برای تعریف دقیق‌تر همکاری، از بخش شروع گفت‌وگو استفاده کنید.</p>
     </div>
     <div class="service-grid">${services}</div>
-  </section>
+  </section>`}
 
   <section class="section sector-start" id="start">
     <div class="copy">
@@ -188,8 +181,6 @@ sectors.forEach((s, i) => {
     <ol>${qs}</ol>
   </section>
 
-  ${catalogues[slugs[i]] ? `<section class="section catalogue" id="catalogue"><div class="section-label">معرفی و مستندات</div><h2>${catalogues[slugs[i]]}</h2><p>فایل اصلی معرفی این حوزه را در ادامه مطالعه کنید یا برای مشاهده در صفحهٔ جدا باز کنید.</p><div class="catalogue-actions"><a class="button" href="../documents/${slugs[i]}.pdf" target="_blank" rel="noopener">مشاهده PDF در صفحهٔ جدا ↗</a><a class="button-ghost" href="../documents/${slugs[i]}.pdf" download>دانلود فایل PDF ↓</a></div><object data="../documents/${slugs[i]}.pdf" type="application/pdf" width="100%" height="760" aria-label="${catalogues[slugs[i]]}"><p>برای مشاهدهٔ فایل، <a href="../documents/${slugs[i]}.pdf" target="_blank" rel="noopener">PDF را باز کنید</a>.</p></object></section>` : ''}
-
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>
     <div class="related-grid">${related}</div>
@@ -197,19 +188,8 @@ sectors.forEach((s, i) => {
   </section>
 </main>
 
-<footer class="site-footer">
-  <a href="../index.html" class="brand">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <p>فرا؛ فراتر از مرزها، هم‌مسیر با آینده</p>
-  <a class="top" href="#">بازگشت به بالا ↑</a>
-  <div class="footer-bottom">
-    <span>گروه بین‌المللی فرا · تمامی حقوق محفوظ است.</span>
-    <span dir="ltr">FARA INTERNATIONAL GROUP</span>
-  </div>
-</footer>
-<script src="../sector.js"></script>
+${renderFooter('../')}
+<script src="../navigation.js" defer></script>
 </body>
 </html>`;
 

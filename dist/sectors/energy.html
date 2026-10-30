@@ -9,24 +9,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../sector.css?v=3">
+<link rel="stylesheet" href="../navigation.css?v=1">
+<link rel="stylesheet" href="../footer.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=1">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
 </head>
 <body>
-<header class="site-header">
-  <a href="../index.html" class="brand" aria-label="فرا، صفحه اصلی">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <nav class="site-nav" aria-label="منوی اصلی">
-    <a href="../index.html">صفحه اصلی</a>
-    <a href="../index.html#sectors">حوزه‌های فعالیت</a>
-    <a href="#services">دامنه فعالیت</a>
-    <a href="#start">شروع همکاری</a>
-  </nav>
-  <a class="header-cta" href="#start">مسیر همکاری <span>↖</span></a>
-  <button id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+<header class="fara-header" data-navigation>
+  <div class="fara-mainbar">
+    <a class="fara-brand" href="../index.html" aria-label="گروه بین‌المللی فرا، صفحه اصلی"><img src="../assets/logo.png" alt="نشان فرا" width="82" height="44"><span>گروه بین‌المللی فرا<small lang="en" dir="ltr">FARA INTERNATIONAL GROUP</small></span></a>
+    <button class="fara-menu-toggle" type="button" aria-controls="fara-primary" aria-expanded="false"><span class="fara-menu-lines" aria-hidden="true"></span><span data-menu-label>منو</span></button>
+
+  </div>
+  <nav class="fara-sector-strip" id="fara-primary" aria-label="منوی اصلی"><div><a href="../index.html">صفحهٔ اصلی</a><a href="../sectors/mining.html">تجهیزات صنایع معدنی</a><a href="../sectors/logistics.html">حمل‌ونقل و لجستیک</a><a href="../sectors/trade.html">صادرات و واردات</a><a href="../sectors/energy.html" aria-current="page">نفت، گاز و پتروشیمی</a><a href="../sectors/textiles.html">نساجی و منسوجات</a><a href="../sectors/real-estate.html">عمران و سرمایه‌گذاری ملکی</a><a href="../sectors/agriculture.html">کشاورزی و کشت و صنعت</a></div></nav>
 </header>
 
 <main>
@@ -46,32 +43,13 @@
       <p class="lead">تأمین و تجارت فرآورده‌های نفتی، گاز، محصولات پتروشیمی و مواد اولیه صنایع انرژی، با هدف توسعه همکاری‌های تجاری و پیوند عرضه‌کنندگان با بازارهای مصرف.</p>
       <div class="hero-actions">
         <a class="button" href="#start">آغاز گفت‌وگوی همکاری <span>↙</span></a>
-        <a class="button-ghost" href="#services">مشاهده دامنه فعالیت</a>
+        <a class="button-ghost" href="#profile">معرفی و شرح فعالیت‌ها</a>
       </div>
       <div class="trust-row"><span>فرآورده‌های نفتی و گاز</span><span>محصولات پتروشیمی</span><span>پیوند عرضه و تقاضا</span></div>
     </div>
   </section>
 
-  <section class="section sector-intro">
-    <div class="copy">
-      <div class="section-label"><span>نگاه عملیاتی</span><span dir="ltr">HOW WE WORK</span></div>
-      <h2>عرضه انرژی و مواد پتروشیمی به بازارهای هدف.</h2>
-      <p>عرضه فرآورده‌های انرژی و پتروشیمی را با تقاضای بازار هدف هم‌راستا می‌کنیم.</p>
-    </div>
-    <figure class="intro-figure">
-      <img src="../assets/energy.webp" alt="نفت، گاز و پتروشیمی" width="1200" height="900" loading="lazy" decoding="async">
-      <figcaption class="intro-caption">نفت، گاز و پتروشیمی · گروه بین‌المللی فرا</figcaption>
-    </figure>
-  </section>
-
-  <section class="section sector-services" id="services">
-    <div class="head">
-      <div class="section-label"><span>دامنه فعالیت</span><span dir="ltr">SCOPE OF ACTIVITIES</span></div>
-      <h2>خدمات این حوزه، <em>متناسب با نیاز شما.</em></h2>
-      <p>سه محور اصلی فعالیت در این بخش؛ برای تعریف دقیق‌تر همکاری، از بخش شروع گفت‌وگو استفاده کنید.</p>
-    </div>
-    <div class="service-grid"><article><b>۰1</b><h3>فرآورده‌های نفتی و گاز</h3><p>تأمین و تجارت فرآورده‌های نفتی و گاز.</p></article><article><b>۰2</b><h3>محصولات پتروشیمی</h3><p>تجارت محصولات پتروشیمی و مواد اولیه صنایع انرژی.</p></article><article><b>۰3</b><h3>پیوند عرضه و تقاضا</h3><p>توسعه همکاری‌های تجاری میان عرضه‌کنندگان و بازارهای مصرف.</p></article></div>
-  </section>
+  <section class="profile-section" id="profile"><div class="profile-layout"><aside class="profile-contents"><span>در این صفحه می‌خوانید</span><h2>واحد نفت، گاز و پتروشیمی فرا</h2><nav aria-label="فهرست مطالب این حوزه"><a href="#profile-1">واحد نفت، گاز و پتروشیمی فرا</a><a href="#profile-2">۱. معرفی واحد نفت، گاز و پتروشیمی</a><a href="#profile-3">۲. مأموریت و چشم‌انداز</a><a href="#profile-4">۳. حوزه‌های اصلی فعالیت</a><a href="#profile-5">۴ مدل‌های همکاری تجاری</a><a href="#profile-6">۵. مزیت‌های همکاری با گروه فرا</a><a href="#profile-7">۶. منشور فعالیت و اصول حرفه‌ای</a><a href="#profile-8">۷ دعوت به همکاری</a><a href="#profile-9">اطلاعات تماس و درخواست همکاری</a></nav><a class="profile-back" href="../index.html#sectors">همهٔ حوزه‌های فعالیت ←</a></aside><article class="profile-article" aria-label="واحد نفت، گاز و پتروشیمی فرا"><section id="profile-1" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">01</div><h2>واحد نفت، گاز و پتروشیمی فرا</h2><p>FARA Oil, Gas &amp; Petrochemicals</p><h3>شعار واحد:</h3><p>تأمین هوشمند، تجارت بین‌المللی، توسعه پایدار در صنعت انرژی</p></section><section id="profile-2" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">02</div><h2>۱. معرفی واحد نفت، گاز و پتروشیمی</h2><p>صنایع نفت، گاز و پتروشیمی از مهم‌ترین ارکان اقتصاد جهانی و از پیشران‌های اصلی توسعه صنعتی، تجارت بین‌الملل و زنجیره تأمین انرژی به شمار می‌روند.</p><p>واحد نفت، گاز و پتروشیمی گروه بین‌المللی فرا با رویکرد توسعه تجارت بین‌المللی و ایجاد ارتباط موثر میان تولیدکنندگان، تأمین‌کنندگان و مصرف‌کنندگان صنعتی، در زمینه تأمین تجهیزات تخصصی، واردات مواد اولیه، صادرات محصولات نفتی و پتروشیمی و تجارت فرآورده‌های هیدروکربنی فعالیت می‌کند.</p><p>این مجموعه با بهره‌گیری از ظرفیت‌های بازرگانی، شبکه ارتباطی و توانمندی‌های لجستیکی گروه فرا، در مسیر شناسایی فرصت‌های تجاری، توسعه بازارهای منطقه‌ای و بین‌المللی و ایجاد زنجیره‌های تأمین مطمئن گام برمی‌دارد.</p><p>رویکرد ما فراتر از انجام معاملات مقطعی است. هدف، شکل‌دهی به همکاری‌های تجاری پایدار، ایجاد ارزش افزوده و توسعه فرصت‌های اقتصادی در زنجیره ارزش صنعت انرژی است.</p></section><section id="profile-3" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">03</div><h2>۲. مأموریت و چشم‌انداز</h2><h3>مأموریت ما</h3><p>ایجاد بستری حرفه‌ای برای تأمین، تجارت و انتقال محصولات، مواد اولیه و تجهیزات موردنیاز صنایع نفت، گاز و پتروشیمی از طریق توسعه ارتباطات تجاری، شناسایی منابع معتبر و ارائه راهکارهای متناسب با نیاز بازارهای صنعتی.</p><h3>چشم‌انداز ما</h3><p>تبدیل‌شدن به یکی از مجموعه‌های معتبر و اثرگذار در تجارت بین‌المللی صنعت انرژی، با تمرکز بر توسعه بازارهای منطقه‌ای، گسترش شبکه تأمین و ایجاد همکاری‌های بلندمدت با فعالان صنعت نفت، گاز و پتروشیمی.</p></section><section id="profile-4" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">04</div><h2>۳. حوزه‌های اصلی فعالیت</h2><h3>۳-۱. تأمین تجهیزات و قطعات تخصصی</h3><p>تأمین تجهیزات، ماشین‌آلات و قطعات تخصصی موردنیاز پالایشگاه‌ها، مجتمع‌های پتروشیمی، صنایع گاز و پروژه‌های زیرساختی از طریق همکاری با سازندگان و تأمین‌کنندگان معتبر داخلی و بین‌المللی.</p><p>دامنه فعالیت:</p><ul><li>پمپ‌ها، کمپرسورها و تجهیزات دوار</li><li>توربین‌ها و تجهیزات مکانیکی</li><li>مبدل‌های حرارتی و مخازن تحت فشار</li><li>شیرآلات صنعتی، ولوها، فلنج‌ها و اتصالات</li><li>تجهیزات خطوط انتقال نفت و گاز</li><li>تجهیزات ابزار دقیق و سیستم‌های کنترل</li><li>تجهیزات برق و اتوماسیون صنعتی</li><li>قطعات یدکی و تجهیزات تعمیر و نگهداری</li></ul><h3>۳-۲. واردات مواد اولیه و محصولات پایه پتروشیمی</h3><p>تأمین و واردات مواد اولیه و محصولات پایه موردنیاز صنایع پتروشیمی، شیمیایی و واحدهای تولیدی با هدف ایجاد دسترسی به منابع معتبر تأمین و پاسخ‌گویی به نیاز بازارهای صنعتی.</p><ul><li>پلی‌اتیلن (PE)</li><li>پلی‌پروپیلن (PP)</li><li>پلی‌وینیل کلراید (PVC)</li><li>پلی‌استایرن (PS)</li><li>متانول (Methanol)</li><li>اوره (Urea)</li><li>گوگرد (Sulfur)</li><li>انواع حلال‌های صنعتی</li><li>مواد شیمیایی پایه و واسطه</li><li>خوراک و مواد اولیهٔ صنایع پایین‌دستی</li></ul><h3>۳-۳. صادرات محصولات نفتی و پتروشیمی</h3><p>توسعه بازارهای صادراتی و ایجاد مسیرهای تجاری برای عرضه محصولات تولیدکنندگان و تأمین‌کنندگان به بازارهای منطقه‌ای و بین‌المللی.</p><p>فرآورده‌های نفتی و پالایشی گاز مایع (LPG) گازوئیل و فرآورده‌های سوختی قیر و محصولات هیدروکربنی متانول و محصولات پایه پتروشیمی پلیمرها و محصولات پلیمری گوگرد و محصولات شیمیایی همچنین شناسایی خریداران، مذاکره تجاری، تنظیم قراردادها و مدیریت فرآیند صادرات از خدمات این بخش است.</p><h3>۳-۴. تجارت فرآورده‌های نفتی و هیدروکربنی</h3><p>فعالیت در حوزه تجارت فرآورده‌های نفتی و هیدروکربنی با تمرکز بر شناسایی منابع تأمین، ارزیابی مشخصات فنی، توسعه شبکه خریداران و مدیریت فرآیندهای خرید و فروش.</p><ul><li>گازوئیل (Gasoil / Diesel)</li><li>نفت کوره (Fuel Oil)</li><li>نفتا (Naphtha)</li><li>گاز مایع (LPG)</li><li>قیر (Bitumen)</li><li>گوگرد (Sulfur)</li><li>سایر فرآورده‌های پالایشی و هیدروکربنی</li></ul><p>معاملات بر اساس مشخصات فنی، استانداردهای کیفی مورد توافق و الزامات قانونی انجام می‌شوند.</p><h3>۳-۵. تأمین مواد شیمیایی و خوراک صنعتی</h3><p>تأمین مواد شیمیایی، محصولات واسطه‌ای و خوراک صنعتی موردنیاز کارخانه‌ها، پالایشگاه‌ها، مجتمع‌های پتروشیمی و صنایع پایین‌دستی.</p><p>خدمات این بخش شامل شناسایی تولیدکنندگان، بررسی آنالیز و مشخصات فنی، ارزیابی کیفیت، مدیریت سفارش و ایجاد زنجیره تأمین متناسب با نیاز مصرف‌کنندگان صنعتی است.</p><h3>۳-۶. بازرگانی بین‌المللی و مدیریت زنجیره تأمین</h3><p>مدیریت هماهنگ فرآیندهای تجاری، مالی، حمل‌ونقل و اسناد بازرگانی با هدف تسهیل مبادلات بین‌المللی در صنعت انرژی.</p><p>خدمات این بخش:</p><ul><li>شناسایی و ارزیابی تأمین‌کنندگان و خریداران</li><li>مدیریت مذاکرات و قراردادهای بین‌المللی</li><li>بررسی شرایط خرید، فروش و روش‌های پرداخت</li><li>هماهنگی حمل‌ونقل زمینی، دریایی، هوایی و ریلی</li><li>مدیریت اسناد تجاری و حمل</li><li>هماهنگی امور گمرکی و ترخیص در چارچوب مقررات</li><li>پیگیری سفارش‌ها از مرحله تأمین تا تحویل نهایی</li></ul></section><section id="profile-5" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">05</div><h2>۴ مدل‌های همکاری تجاری</h2><p>گروه بین‌المللی فرا با رویکرد توسعه همکاری‌های بلندمدت و منافع متقابل، آمادگی همکاری با مجموعه‌های فعال در صنعت انرژی را در قالب‌های زیر دارد:</p><h3>همکاری با پالایشگاه‌ها و تولیدکنندگان</h3><p>توسعه بازارهای صادراتی، ایجاد مسیرهای فروش بین‌المللی و تأمین نیازهای تجاری و صنعتی.</p><h3>همکاری با مجتمع‌های پتروشیمی</h3><p>تأمین مواد اولیه، خوراک، تجهیزات و محصولات موردنیاز واحدهای تولیدی.</p><h3>همکاری با سازندگان و تأمین‌کنندگان تجهیزات</h3><p>توسعه شبکه تأمین، بازاریابی بین‌المللی، نمایندگی تجاری و مشارکت در پروژه‌ها.</p><h3>همکاری با خریداران و مصرف‌کنندگان صنعتی</h3><p>تأمین محصولات موردنیاز، ارائه پیشنهادهای تجاری و مدیریت فرآیند خرید.</p><h3>مشارکت در پروژه‌های نفت و گاز</h3><p>همکاری در تأمین کالا، تجهیزات، مواد اولیه و خدمات بازرگانی پروژه‌های صنعتی و زیرساختی.</p></section><section id="profile-6" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">06</div><h2>۵. مزیت‌های همکاری با گروه فرا</h2><ul><li>شبکهٔ ارتباطی تجاری و تأمین بین‌المللی</li><li>فعالیت در حوزه‌های متنوع نفت، گاز و پتروشیمی</li><li>امکان هماهنگی میان تأمین، تجارت و لجستیک</li><li>شناخت ظرفیت‌های بازارهای منطقه‌ای و بین‌المللی</li><li>ارائهٔ راهکارهای متناسب با نیاز مشتریان صنعتی</li><li>پیگیری یکپارچهٔ فرآیندهای بازرگانی و تأمین</li><li>رویکرد مبتنی بر همکاری پایدار و منافع مشترک</li></ul></section><section id="profile-7" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">07</div><h2>۶. منشور فعالیت و اصول حرفه‌ای</h2><p>فعالیت‌های واحد نفت، گاز و پتروشیمی گروه فرا بر اصول زیر استوار است:</p><p>اعتبار و شفافیت: پایبندی به شفافیت در مذاکرات، قراردادها و تعهدات تجاری.</p><p>کیفیت و استاندارد: توجه به مشخصات فنی، آنالیز محصولات و استانداردهای مورد توافق.</p><p>تأمین مطمئن: شناسایی منابع معتبر و تلاش برای ایجاد زنجیره تأمین پایدار.</p><p>تعهد حرفه‌ای: احترام به منافع طرفین و پایبندی به توافقات.</p><p>توسعه بین‌المللی: گسترش ارتباطات تجاری و شناسایی فرصت‌های جدید در بازارهای جهانی.</p><p>مدیریت ریسک: ارزیابی ریسک‌های تجاری، مالی، حمل‌ونقل و الزامات قانونی.</p><p>نگاه بلندمدت: ایجاد روابط تجاری پایدار به‌جای تمرکز صرف بر معاملات مقطعی.</p></section><section id="profile-8" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">08</div><h2>۷ دعوت به همکاری</h2><p>ما باور داریم توسعه صنعت انرژی، حاصل ارتباط موثر میان تولیدکنندگان، تأمین‌کنندگان، سرمایه‌گذاران و بازارهای مصرف است.</p><p>گروه بین‌المللی فرا آمادگی دارد با پالایشگاه‌ها، مجتمع‌های پتروشیمی، شرکت‌های صنعتی، سازندگان تجهیزات، تأمین‌کنندگان مواد اولیه و مجموعه‌های بازرگانی در چارچوب همکاری‌های تجاری، تأمین کالا، واردات، صادرات و توسعه بازارهای بین‌المللی همکاری کند.</p><p>FARA؛ فراتر از مرزها، هم‌مسیر با آینده.</p></section><section id="profile-9" class="profile-chapter"><div class="profile-chapter-number" aria-hidden="true">09</div><h2>اطلاعات تماس و درخواست همکاری</h2><h3>با واحد نفت، گاز و پتروشیمی فرا در ارتباط باشید.</h3><p>برای دریافت پیشنهاد همکاری، ثبت درخواست تأمین کالا، ارائه محصولات صادراتی یا بررسی فرصت‌های تجاری، از طریق بخش ارتباط با ما اقدام کنید.</p></section></article></div></section>
 
   <section class="section sector-start" id="start">
     <div class="copy">
@@ -82,8 +60,6 @@
     <ol><li><span>۰1</span>نوع محصول و مشخصات مورد نیاز</li><li><span>۰2</span>حجم و برنامه تأمین</li><li><span>۰3</span>مبدأ، مقصد و شرایط همکاری</li></ol>
   </section>
 
-  <section class="section catalogue" id="catalogue"><div class="section-label">معرفی و مستندات</div><h2>نفت، گاز و پتروشیمی</h2><p>فایل اصلی معرفی این حوزه را در ادامه مطالعه کنید یا برای مشاهده در صفحهٔ جدا باز کنید.</p><div class="catalogue-actions"><a class="button" href="../documents/energy.pdf" target="_blank" rel="noopener">مشاهده PDF در صفحهٔ جدا ↗</a><a class="button-ghost" href="../documents/energy.pdf" download>دانلود فایل PDF ↓</a></div><object data="../documents/energy.pdf" type="application/pdf" width="100%" height="760" aria-label="نفت، گاز و پتروشیمی"><p>برای مشاهدهٔ فایل، <a href="../documents/energy.pdf" target="_blank" rel="noopener">PDF را باز کنید</a>.</p></object></section>
-
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>
     <div class="related-grid"><a href="mining.html"><span class="thumb"><img src="../assets/mining.webp" alt="تجهیزات صنایع معدنی" width="840" height="472" loading="lazy" decoding="async"></span><strong>تجهیزات صنایع معدنی</strong></a><a href="logistics.html"><span class="thumb"><img src="../assets/logistics.webp" alt="حمل‌ونقل و لجستیک" width="840" height="472" loading="lazy" decoding="async"></span><strong>حمل‌ونقل و لجستیک</strong></a><a href="trade.html"><span class="thumb"><img src="../assets/trade.webp" alt="صادرات و واردات" width="840" height="472" loading="lazy" decoding="async"></span><strong>صادرات و واردات</strong></a><a href="textiles.html"><span class="thumb"><img src="../assets/textiles.webp" alt="نساجی و منسوجات" width="840" height="472" loading="lazy" decoding="async"></span><strong>نساجی و منسوجات</strong></a><a href="real-estate.html"><span class="thumb"><img src="../assets/real-estate.webp" alt="عمران و سرمایه‌گذاری ملکی" width="840" height="472" loading="lazy" decoding="async"></span><strong>عمران و سرمایه‌گذاری ملکی</strong></a><a href="agriculture.html"><span class="thumb"><img src="../assets/agriculture.webp" alt="کشاورزی و کشت و صنعت" width="840" height="472" loading="lazy" decoding="async"></span><strong>کشاورزی و کشت و صنعت</strong></a></div>
@@ -91,18 +67,7 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <a href="../index.html" class="brand">
-    <img class="brand-logo" src="../assets/logo.png" alt="نشان فرا" width="220" height="110">
-    <span class="brand-sub">گروه بین‌المللی فرا</span>
-  </a>
-  <p>فرا؛ فراتر از مرزها، هم‌مسیر با آینده</p>
-  <a class="top" href="#">بازگشت به بالا ↑</a>
-  <div class="footer-bottom">
-    <span>گروه بین‌المللی فرا · تمامی حقوق محفوظ است.</span>
-    <span dir="ltr">FARA INTERNATIONAL GROUP</span>
-  </div>
-</footer>
-<script src="../sector.js"></script>
+<footer class="fara-footer" id="contact"><div class="fara-footer-inner"><div class="fara-footer-contact"><h2>مسیر تجارت شما، تخصص ماست</h2><p>اگر برای صادرات، واردات، ترانزیت یا حمل محموله‌های تجاری، صنعتی و پروژه‌ای خود به راهکار حمل‌ونقل مطمئن نیاز دارید، کارشناسان FARA TransLog آمادهٔ بررسی نیازهای شما و ارائهٔ پیشنهاد متناسب با مسیر و نوع محموله هستند.</p><a href="../sectors/logistics.html#start">با ما در ارتباط باشید <span aria-hidden="true">←</span></a></div><div class="fara-footer-vision"><h2>چشم‌انداز ما</h2><p>تبدیل شدن به مجموعه‌ای پیشرو و قابل اتکا در حوزهٔ لجستیک و حمل‌ونقل بین‌المللی؛ با توسعهٔ ارتباطات تجاری و بهره‌گیری از ظرفیت‌های متنوع حمل‌ونقل، نقش مؤثری در تسهیل تجارت و توسعهٔ زنجیرهٔ تأمین ایفا کنیم.</p><strong><span lang="en" dir="ltr">FARA TransLog</span>؛ فراتر از جابه‌جایی کالا، همراه در مسیر توسعهٔ تجارت جهانی.</strong></div></div></footer>
+<script src="../navigation.js" defer></script>
 </body>
 </html>
