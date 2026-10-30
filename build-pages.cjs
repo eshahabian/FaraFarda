@@ -80,6 +80,7 @@ const questions = [
   ['نوع طرح و موقعیت اجرای آن', 'منابع و ظرفیت تولید یا فرآوری', 'مدل سرمایه‌گذاری یا مشارکت مورد نظر']
 ];
 
+const catalogues = {"mining":"معرفی شرکت و فعالیت‌های تجهیزات معدنی","logistics":"معرفی خدمات حمل‌ونقل و لجستیک","trade":"صادرات و واردات گروه بین‌المللی فرا","energy":"نفت، گاز و پتروشیمی","agriculture":"کشاورزی و کشت و صنعت"};
 fs.mkdirSync('dist/sectors', { recursive: true });
 
 sectors.forEach((s, i) => {
@@ -186,6 +187,8 @@ sectors.forEach((s, i) => {
     </div>
     <ol>${qs}</ol>
   </section>
+
+  ${catalogues[slugs[i]] ? `<section class="section catalogue" id="catalogue"><div class="section-label">معرفی و مستندات</div><h2>${catalogues[slugs[i]]}</h2><p>فایل اصلی معرفی این حوزه را در ادامه مطالعه کنید یا برای مشاهده در صفحهٔ جدا باز کنید.</p><div class="catalogue-actions"><a class="button" href="../documents/${slugs[i]}.pdf" target="_blank" rel="noopener">مشاهده PDF در صفحهٔ جدا ↗</a><a class="button-ghost" href="../documents/${slugs[i]}.pdf" download>دانلود فایل PDF ↓</a></div><object data="../documents/${slugs[i]}.pdf" type="application/pdf" width="100%" height="760" aria-label="${catalogues[slugs[i]]}"><p>برای مشاهدهٔ فایل، <a href="../documents/${slugs[i]}.pdf" target="_blank" rel="noopener">PDF را باز کنید</a>.</p></object></section>` : ''}
 
   <section class="section sector-related">
     <div class="section-label">دیگر حوزه‌های فعالیت فرا</div>

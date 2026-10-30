@@ -246,3 +246,5 @@ p{margin:0;font-size:14px;line-height:2.15;color:var(--muted)}
   .sector-hero-media{animation:none}
   .related-grid a,.related-grid img{transition:none}
 }
+
+.catalogue{scroll-margin-top:90px}.catalogue h2{margin:12px 0}.catalogue>p{line-height:2}.catalogue-actions{display:flex;gap:14px;flex-wrap:wrap;margin:24px 0}.catalogue object{display:block;background:#fff;border:1px solid #c5a55740;border-radius:8px}.catalogue object p{padding:24px;color:#153e56}.catalogue object a{text-decoration:underline}@media(max-width:600px){.catalogue object{height:480px}.catalogue-actions a{font-size:12px}}
