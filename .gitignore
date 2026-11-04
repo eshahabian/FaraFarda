@@ -1,0 +1,4 @@
+# Runtime credentials, content and backups must never enter Git.
+.fara-cms-*/
+.online-test-*/
+*.editor-tmp

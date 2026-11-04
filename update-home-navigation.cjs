@@ -1,8 +1,9 @@
 const fs = require('fs');
 const { renderHeader } = require('./navigation.cjs');
 const { renderFooter } = require('./footer.cjs');
+const { applyPageEdits } = require('./site-text.cjs');
 const file = 'dist/index.html';
-let home = fs.readFileSync(file, 'utf8');
+let home = fs.readFileSync('content/home.html', 'utf8');
 home = home.replace(/<header\b[\s\S]*?<\/header>/, renderHeader());
 home = home.replace(/<footer\b[\s\S]*?<\/footer>/, renderFooter());
 if (!home.includes('href="footer.css')) home = home.replace('</head>', '<link rel="stylesheet" href="footer.css?v=1"></head>');
@@ -10,5 +11,7 @@ home = home.replaceAll('#catalogue', '#profile').replaceAll('مشاهده خدم
 if (!home.includes('href="navigation.css')) home = home.replace('</head>', '<link rel="stylesheet" href="navigation.css?v=1"></head>');
 if (!home.includes('src="navigation.js')) home = home.replace('</body>', '<script src="navigation.js" defer></script></body>');
 if (!home.includes('id="about"')) home = home.replace('<section id="sectors"', `<section id="about" class="about-fara"><div><p class="eyebrow">تجارت، صنعت و سرمایه‌گذاری</p><h2>دربارهٔ گروه بین‌المللی فرا</h2><p>گروه بین‌المللی فرا در حوزه‌های تجهیزات صنایع معدنی، حمل‌ونقل و لجستیک، صادرات و واردات، نفت و گاز و پتروشیمی، نساجی، عمران و سرمایه‌گذاری ملکی و کشاورزی فعالیت می‌کند. هر حوزه صفحهٔ اختصاصی خود را دارد تا معرفی فعالیت‌ها، خدمات و فایل‌های مربوط به آن را به‌صورت جداگانه مطالعه کنید.</p><a href="#sectors">آشنایی با حوزه‌های فعالیت و معرفی شرکت‌ها ←</a></div><img src="assets/group.webp" alt="تجارت و صنعت؛ حوزه‌های فعالیت گروه بین‌المللی فرا" width="640" height="320" loading="lazy"></section><section id="sectors"`);
-fs.writeFileSync(file, home);
+fs.writeFileSync(file, applyPageEdits(home, 'home'));
 console.log('Updated shared homepage navigation and group introduction.');
+
+if (fs.existsSync(__dirname + '/prepare-online-admin.cjs')) require('./prepare-online-admin.cjs');

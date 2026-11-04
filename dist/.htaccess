@@ -1,0 +1,9 @@
+Options -Indexes
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Only known public HTML pages are served by the CMS renderer.
+RewriteRule ^$ fara-admin/render.php?page=index.html [END]
+RewriteRule ^(index\.html|sectors/(?:mining|logistics|trade|energy|textiles|real-estate|agriculture)\.html)$ fara-admin/render.php?page=$1 [END]
+RewriteRule ^(assets/[^/]+\.(?:png|jpg|jpeg|webp))$ fara-admin/media.php?asset=$1 [END,NC]
+</IfModule>

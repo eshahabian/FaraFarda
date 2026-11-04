@@ -1,0 +1,12 @@
+{
+  "items": [
+    {"id":"home","label":"صفحهٔ اصلی","href":"index.html"},
+    {"id":"mining","label":"تجهیزات صنایع معدنی","href":"sectors/mining.html"},
+    {"id":"logistics","label":"حمل‌ونقل و لجستیک","href":"sectors/logistics.html"},
+    {"id":"trade","label":"صادرات و واردات","href":"sectors/trade.html"},
+    {"id":"energy","label":"نفت، گاز و پتروشیمی","href":"sectors/energy.html"},
+    {"id":"textiles","label":"نساجی و منسوجات","href":"sectors/textiles.html"},
+    {"id":"real-estate","label":"عمران و سرمایه‌گذاری ملکی","href":"sectors/real-estate.html"},
+    {"id":"agriculture","label":"کشاورزی و کشت و صنعت","href":"sectors/agriculture.html"}
+  ]
+}

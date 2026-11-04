@@ -3,6 +3,7 @@ const vm = require('vm');
 const { renderHeader } = require('./navigation.cjs');
 const { renderFooter } = require('./footer.cjs');
 const { renderProfile } = require('./profile-content.cjs');
+const { applyPageEdits } = require('./site-text.cjs');
 
 const app = fs.readFileSync('dist/app.js', 'utf8');
 const sectors = vm.runInNewContext(
@@ -193,7 +194,9 @@ ${renderFooter('../')}
 </body>
 </html>`;
 
-  fs.writeFileSync(`dist/sectors/${slugs[i]}.html`, html);
+  fs.writeFileSync(`dist/sectors/${slugs[i]}.html`, applyPageEdits(html, slugs[i]));
 });
 
 console.log('Generated 7 sector pages (Maersk-inspired).');
+
+if (fs.existsSync(__dirname + '/prepare-online-admin.cjs')) require('./prepare-online-admin.cjs');

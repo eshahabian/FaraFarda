@@ -4,7 +4,7 @@ html{scroll-padding-top:150px}
 .fara-mainbar{max-width:1360px;margin:auto;padding:15px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:82px}
 .fara-brand{display:flex;align-items:center;gap:12px;flex-shrink:0;font-size:15px;font-weight:700;white-space:nowrap}
 .fara-brand img{display:block;width:82px;height:44px;object-fit:contain}.fara-brand small{display:block;font-size:8px;letter-spacing:1.5px;margin-top:3px}
-.fara-sector-strip{background:#073650;color:#fff}.fara-sector-strip>div{max-width:1360px;margin:auto;padding:0 32px;display:grid;grid-template-columns:.8fr repeat(7,minmax(0,1fr));align-items:stretch}
+.fara-sector-strip{background:#073650;color:#fff}.fara-sector-strip>div{max-width:1360px;margin:auto;padding:0 32px;display:grid;grid-template-columns:repeat(var(--menu-count,8),minmax(0,1fr));align-items:stretch}
 .fara-sector-strip a{font-size:11px;text-align:center;padding:14px 6px;border-inline-start:1px solid #ffffff1a;display:flex;align-items:center;justify-content:center;position:relative}
 .fara-sector-strip a:last-child{border-inline-end:1px solid #ffffff1a}.fara-sector-strip a:hover,.fara-sector-strip a[aria-current]{background:#154963;color:#f5dfac}
 .fara-sector-strip a[aria-current]:after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:3px;background:#c7a45a}

@@ -39,6 +39,19 @@
       "text": "الف) حمل‌ونقل دریایی | Maritime Freight"
     },
     {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "sea-container-terminal.webp",
+          "alt": "کشتی کانتینری در کنار جرثقیل‌های پایانه بندری"
+        },
+        {
+          "src": "sea-container-ship.jpg",
+          "alt": "کشتی حامل کانتینر در مسیر دریایی"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "text": "حمل‌ونقل دریایی یکی از اصلی‌ترین محورهای فعالیت FARA TransLog است. این شیوه با توجه به ظرفیت بالای جابه‌جایی و صرفهٔ اقتصادی، راهکاری مهم برای تجارت بین‌المللی و انتقال محموله‌های حجیم محسوب می‌شود."
     },
@@ -61,6 +74,19 @@
       "text": "ب) حمل‌ونقل هوایی | Air Freight"
     },
     {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "air-freight-pallets.jpg",
+          "alt": "محموله‌های پالت‌شده کنار هواپیما در فرودگاه"
+        },
+        {
+          "src": "air-cargo-loading.jpg",
+          "alt": "عملیات بارگیری محموله‌ها در هواپیمای باری"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "text": "حمل‌ونقل هوایی برای محموله‌هایی که سرعت تحویل، امنیت و زمان‌بندی در آن‌ها اهمیت ویژه‌ای دارد، از جایگاه مهمی برخوردار است."
     },
@@ -79,6 +105,23 @@
     {
       "type": "subheading",
       "text": "ج) حمل‌ونقل زمینی و جاده‌ای | Road Freight"
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "road-transit-trucks.jpg",
+          "alt": "کامیون‌های ترانزیتی در مسیر جاده‌ای"
+        },
+        {
+          "src": "road-truck-lineup.jpg",
+          "alt": "ردیفی از کامیون‌های حمل بار"
+        },
+        {
+          "src": "road-freight-trucks.webp",
+          "alt": "کامیون‌ها و تریلی‌های حمل‌ونقل جاده‌ای"
+        }
+      ]
     },
     {
       "type": "paragraph",
@@ -136,6 +179,19 @@
       "text": "حمل فله خشک | Dry Bulk Shipping"
     },
     {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "bulk-grain-loading.jpg",
+          "alt": "بارگیری غلات در کشتی فله‌بر"
+        },
+        {
+          "src": "bulk-grain-grab.jpg",
+          "alt": "جابه‌جایی غلات با چنگک بندری"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "text": "جابه‌جایی مواد معدنی، سنگ‌آهن، کرومیت، سیمان، کلینکر، غلات و سایر کالاهای فله خشک."
     },
@@ -160,12 +216,34 @@
       "text": "حمل کالای عمومی | General Cargo"
     },
     {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "bagged-cargo-loading.jpg",
+          "alt": "بارگیری محموله کیسه‌ای در کشتی"
+        }
+      ]
+    },
+    {
       "type": "paragraph",
       "text": "انتقال انواع کالاهای بسته‌بندی‌شده، پالت‌شده، فلزی، صنعتی و محموله‌هایی که نیازمند شیوهٔ بارگیری و تخلیهٔ خاص هستند."
     },
     {
       "type": "heading",
       "text": "۴ خدمات تکمیلی لجستیک"
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "customs-warehouse.webp",
+          "alt": "بررسی اسناد کالا در انبار"
+        },
+        {
+          "src": "customs-containers.jpg",
+          "alt": "هماهنگی عملیات کانتینری در پایانه بندری"
+        }
+      ]
     },
     {
       "type": "paragraph",
@@ -189,6 +267,19 @@
     {
       "type": "heading",
       "text": "۵. حمل‌ونقل چندوجهی، یک راهکار، چند مسیر"
+    },
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "src": "transport-network.webp",
+          "alt": "شبکه حمل زمینی، هوایی و دریایی"
+        },
+        {
+          "src": "transport-global.jpg",
+          "alt": "شبکه جهانی حمل‌ونقل چندوجهی"
+        }
+      ]
     },
     {
       "type": "paragraph",
