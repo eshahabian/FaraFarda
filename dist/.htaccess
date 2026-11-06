@@ -2,6 +2,8 @@ Options -Indexes
 DirectoryIndex index.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule ^sitemap\.xml$ fara-admin/sitemap.php [END]
+RewriteRule ^pages/([a-z][a-z0-9-]*)\.html$ fara-admin/render.php?page=pages/$1.html [END]
 # Only known public HTML pages are served by the CMS renderer.
 RewriteRule ^$ fara-admin/render.php?page=index.html [END]
 RewriteRule ^(index\.html|sectors/(?:mining|logistics|trade|energy|textiles|real-estate|agriculture)\.html)$ fara-admin/render.php?page=$1 [END]

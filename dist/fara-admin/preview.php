@@ -1,6 +1,7 @@
 <?php
 require __DIR__.'/core.php';
 session_boot();$u=current_user();if(!$u||$u['mustChange']){http_response_code(403);exit('ابتدا وارد پنل شوید و رمز موقت را عوض کنید.');}
+if($u['role']!=='admin'){http_response_code(403);exit('از پیش‌نمایش دارای کنترل مجوز استودیو استفاده کنید.');}
 try{
  $id=$_GET['page']??'home';$page=page_config($id);$html=render_page($id);$scan=text_scan($html,$id);$byParent=[];
  foreach($scan['fields'] as $f)if(!$f['derived'])$byParent[$f['parentStart']][]=$f['id'];$patches=[];

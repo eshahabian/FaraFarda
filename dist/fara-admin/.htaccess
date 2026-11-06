@@ -1,5 +1,5 @@
 Options -Indexes
 DirectoryIndex index.php
-<FilesMatch "^(core\.php|config\.php|site\.json|.*\.(?:bak|tmp|log))$">
+<FilesMatch "^(core\.php|design-core\.php|config\.php|site\.json|.*\.(?:bak|tmp|log))$">
 Require all denied
 </FilesMatch>

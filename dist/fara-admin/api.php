@@ -37,6 +37,8 @@ try {
   });api_json(...$result);
  }
  if($user['mustChange'])api_json(403,['error'=>'پیش از استفاده از پنل باید رمز موقت را تغییر دهید.','mustChange'=>true]);
+ if($user['role']!=='admin')api_json(403,['error'=>'ویرایش طراحی فقط از API جدید و با مجوزهای اختصاصی مجاز است.']);
+ if($method==='POST'&&in_array($route,['save','menu','image','undo'],true))api_json(410,['error'=>'ویرایش مستقیم بازنشسته شده است؛ از پیش‌نویس و انتشار استودیوی طراحی استفاده کنید.']);
  if($route==='users'){
   if($user['role']!=='admin')api_json(403,['error'=>'مدیریت کاربران فقط برای مدیر مجاز است.']);
   if($method==='GET'){api_json(200,['users'=>array_map(fn($id,$u)=>public_user($u+['id'=>$id]),array_keys(read_json('users')),array_values(read_json('users')))]);}
