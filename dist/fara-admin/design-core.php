@@ -66,7 +66,7 @@ function design_validate(string $id,array $d,array $old): array {
  }
  if($id==='patterns'){if(count($d['items']??[])>50)throw new InvalidArgumentException('Patterns');return ['items'=>array_map(fn($x)=>['title'=>design_text($x['title'],320),'blocks'=>design_blocks($x['blocks'])],$d['items']??[])];}
  $out=['title'=>design_text($d['title']??'',320),'href'=>$old['href']??'','blocks'=>design_blocks($d['blocks']??[]),'text'=>[],'mode'=>in_array($d['mode']??'', ['append','replace'],true)?$d['mode']:'append','categories'=>[]];
- $allowed=[];if($id!=='shared'&&!str_starts_with($id,'page-'))foreach(fields_for(render_page($id),$id,state()) as $f)if($f['scope']==='page')$allowed[$f['id']]=$f;
+ $allowed=[];if(!str_starts_with($id,'page-'))foreach(fields_for(render_page($id==='shared'?'home':$id),$id==='shared'?'home':$id,state()) as $f)if(($id==='shared')===($f['scope']!=='page'))$allowed[$f['id']]=$f;
  foreach($d['text']??[] as $key=>$v){if(!isset($allowed[$key]))throw new InvalidArgumentException('Unknown text');$out['text'][$key]=design_text($v,120000);}
  $cats=design_entity('categories')['draft']['items'];foreach($d['categories']??[] as $cat){if(!in_array($cat,array_column($cats,'id'),true))throw new InvalidArgumentException('Unknown category');$out['categories'][]=$cat;}
  $seo=$d['seo']??[];$canonical=design_text($seo['canonical']??'',2048);if($canonical!==''&&(!str_starts_with($canonical,'https://')||!filter_var($canonical,FILTER_VALIDATE_URL)))throw new InvalidArgumentException('Canonical');
@@ -75,17 +75,27 @@ function design_validate(string $id,array $d,array $old): array {
  if($id==='shared'){
   $out['theme']=design_style($d['theme']??[]);$out['mobileTheme']=design_style($d['mobileTheme']??[]);
   foreach(['header','footer'] as $part){$out[$part]=design_blocks($d[$part]??[]);$out[$part.'Mode']=($d[$part.'Mode']??'append')==='replace'?'replace':'append';}
-  $out['assetOverrides']=[];$assets=array_column(image_catalog(false),'id');foreach($d['assetOverrides']??[] as $asset=>$media){if(!in_array($asset,$assets,true)||!isset(design_store()['media'][$media]))throw new InvalidArgumentException('Asset');$out['assetOverrides'][$asset]=$media;}
+  $out['assetOverrides']=[];$assets=array_column(design_catalog(),'id');foreach($d['assetOverrides']??[] as $asset=>$media){if(!in_array($asset,$assets,true)||!isset(design_store()['media'][$media]))throw new InvalidArgumentException('Asset');$out['assetOverrides'][$asset]=$media;}
  }return $out;
 }
 function design_asset(string $id): string {return site_base().'/fara-admin/design.php?media='.rawurlencode($id);}
+function design_catalog(): array {
+ $items=array_column(image_catalog(false),null,'id');$root=realpath(SITE_ROOT.'/assets');
+ if($root)foreach(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root,FilesystemIterator::SKIP_DOTS)) as $file){if(!$file->isFile()||$file->isLink()||!preg_match('~\.(png|jpe?g|webp)$~i',$file->getFilename()))continue;$key='assets/'.str_replace(DIRECTORY_SEPARATOR,'/',substr($file->getPathname(),strlen($root)+1));$items[$key]??=['id'=>$key,'label'=>$file->getFilename(),'pages'=>[],'url'=>site_base().'/'.$key];}
+ $shared=design_entity('shared')['draft'];foreach($items as $key=>&$item){$info=@getimagesize(SITE_ROOT.'/'.$key);$item['width']=$info[0]??0;$item['height']=$info[1]??0;$item['draftMedia']=$shared['assetOverrides'][$key]??'';}unset($item);return array_values($items);
+}
+function design_preview_css(string $css,array $shared): string {
+ return preg_replace_callback('~([^{}]+)\{([^{}]*)\}~',function($m)use($shared){$asset=null;$body=preg_replace_callback('~url\(\s*["\x27]?([^\s)"\x27]+)["\x27]?\s*\)~',function($u)use(&$asset,$shared){$path=preg_replace('~^(?:\.\./|\./)*~','',$u[1]);if(!preg_match('~^assets/[a-zA-Z0-9_./-]+\.(png|jpe?g|webp)$~i',$path))return $u[0];$asset=$path;return 'url("'.esc(isset($shared['assetOverrides'][$path])?design_asset($shared['assetOverrides'][$path]):site_base().'/'.$path).'")';},$m[2]);return $m[1].'{'.$body.($asset?';--editor-asset:"'.$asset.'";':'').'}';},$css);
+}
 function design_check_public_links(string $id,array $d): void {
  $links=[];$walk=function($v)use(&$walk,&$links){if(!is_array($v))return;foreach($v as $k=>$x){if($k==='link'&&is_string($x)&&$x!=='')$links[]=$x;if(is_array($x))$walk($x);}};$walk($d);if($id==='menu')foreach($d['items'] as $x)$links[]=$x['href'];
  foreach($links as $link){if(preg_match('~^(https:|mailto:|tel:)~',$link))continue;$parts=explode('#',$link);$href=$parts[0]?:($d['href']??'');$target=null;foreach(site_config()['pages'] as $p)if($p['href']===$href)$target=$p['id'];foreach(design_store()['entities'] as $key=>$e)if(($e['draft']['href']??null)===$href)$target=$key;if(!$target)throw new InvalidArgumentException('Unknown public destination');$html=design_render($target,$target===$id?$d:null);if($html===null)throw new InvalidArgumentException('Publish destination first');if(isset($parts[1])&&!preg_match('~\bid=["\x27]'.preg_quote($parts[1],'~').'["\x27]~',$html))throw new InvalidArgumentException('Public section not found');}
 }
-function design_preview_html(string $id,array $d): string {
- $html=design_render($id,$d)??'';if($id==='shared'||str_starts_with($id,'page-'))return $html;
- $scan=text_scan($html,$id);$by=[];foreach($scan['fields'] as $f)if($f['scope']==='page'&&!$f['derived'])$by[$f['parentStart']][]=$f['id'];$patches=[];
+function design_preview_html(string $id,array $d,?array $shared=null): string {
+ $shared??=$id==='shared'?$d:(design_live('shared')??[]);$html=design_render($id,$d,$shared)??'';
+ $html=preg_replace_callback('~<link\b[^>]*href=["\x27]([^"\x27]+\.css(?:\?[^"\x27]*)?)["\x27][^>]*>~i',function($m)use($shared){$name=basename(parse_url($m[1],PHP_URL_PATH));if(!is_file(SITE_ROOT.'/'.$name))return $m[0];return '<style>'.design_preview_css(file_get_contents(SITE_ROOT.'/'.$name),$shared).'</style>';},$html);
+ $html=preg_replace_callback('~(<style\b[^>]*>)([\s\S]*?)(</style>)~i',fn($m)=>$m[1].design_preview_css($m[2],$shared).$m[3],$html);
+ $scan=text_scan($html,$id==='shared'?'home':$id);$by=[];foreach($scan['fields'] as $f)if(!$f['derived'])$by[$f['parentStart']][]=$f['id'];$patches=[];
  foreach($scan['nodes'] as $n)if(isset($by[$n['start']??-1]))$patches[]=['start'=>$n['start'],'end'=>$n['end'],'value'=>substr($n['raw'],0,-1).' data-editor-fields="'.esc(json_encode($by[$n['start']])).'">'];return patch($html,$patches);
 }
 function design_css(array $s): string {$out='';foreach($s as $k=>$v){$prop=['fontSize'=>'font-size','font'=>'font-family','hidden'=>'display'][$k]??$k;$out.=$prop.':'.($k==='hidden'?($v?'none':'revert'):(is_int($v)?$v.'px':$v)).';';}return $out;}
@@ -110,12 +120,14 @@ function design_document_html(string $id,array $d,string $html): string {
  $html=preg_replace('~<(?:meta\b[^>]*(?:name=["\x27](?:description|robots)["\x27]|property=["\x27]og:image["\x27])[^>]*|link\b[^>]*rel=["\x27]canonical["\x27][^>]*)>~i','',$html);
  $meta='<meta name="description" content="'.esc($seo['description']??'').'"><meta name="robots" content="'.(!empty($seo['noindex'])?'noindex':'index').',follow">';if(!empty($seo['canonical']))$meta.='<link rel="canonical" href="'.esc($seo['canonical']).'">';if(!empty($seo['image']))$meta.='<meta property="og:image" content="'.esc(design_asset($seo['image'])).'">';return str_replace('</head>',$meta.'</head>',$html);
 }
-function design_render(string $id,?array $override=null): ?string {
+function design_render(string $id,?array $override=null,?array $sharedOverride=null): ?string {
  $store=design_store();$e=design_entity($id,$store);$GLOBALS['design_href']=$e['draft']['href']??'index.html';if(in_array($e['status'],['trash','unpublished'],true)&&$override===null)return null;$d=$override??$e['published'];
  if(str_starts_with($id,'page-')){if(!$d)return null;$html=render_page('home');$html=preg_replace_callback('~(<main\b[^>]*>)[\s\S]*?(</main>)~',fn($m)=>$m[1].$m[2],$html,1);$html=preg_replace_callback('~<title>.*?</title>~s',fn()=>'<title>'.esc($d['title']).'</title>',$html);$html=str_replace('<head>','<head><base href="'.esc(site_base()).'/index.html">',$html);}
  else $html=render_page($id==='shared'?'home':$id);
  if($d&&$id!=='shared')$html=design_document_html($id,$d,$html);
- $shared=design_live('shared');if($id==='shared'&&$override)$shared=$override;
+ if($override!==null)$html=preg_replace_callback('~<img\b[^>]*\bsrc=["\x27](?:\.\./|\./)*(assets/[a-zA-Z0-9_./-]+)["\x27][^>]*>~i',fn($m)=>substr($m[0],0,-1).' data-editor-asset="'.esc($m[1]).'">',$html);
+ $shared=$sharedOverride??design_live('shared');if($id==='shared'&&$override)$shared=$override;
+ if(!empty($shared['text'])){$edits=[];foreach(fields_for($html,$id==='shared'?'home':$id,state()) as $f)if(isset($shared['text'][$f['id']]))$edits[$f['id']]=['original'=>$f['value'],'value'=>$shared['text'][$f['id']]];$html=apply_edits($html,$id==='shared'?'home':$id,$edits);}
  if($shared)$html=str_replace('</head>','<style>body{'.design_css($shared['theme']??[]).'}@media(max-width:700px){body{'.design_css($shared['mobileTheme']??[]).'}} </style></head>',$html);
  if($shared)foreach($shared['assetOverrides']??[] as $asset=>$media){$relative=($id!=='shared'&&dirname($e['draft']['href']??'')!=='.'?'../':'').$asset;$html=str_replace($relative,design_asset($media),$html);}
  if($shared)foreach(['header','footer'] as $part){$b=design_blocks_html($shared[$part]);if($shared[$part.'Mode']==='replace')$html=preg_replace_callback('~(<'.$part.'\b[^>]*>)[\s\S]*?(</'.$part.'>)~',fn($m)=>$m[1].$b.$m[2],$html,1);else $html=preg_replace_callback('~</'.$part.'>~',fn()=>$b.'</'.$part.'>',$html,1);}

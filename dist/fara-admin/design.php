@@ -21,7 +21,7 @@ try {
  if($action==='list'){
   $s=design_store();$items=[];foreach(site_config()['pages'] as $p)$items[$p['id']]=design_entity($p['id'],$s);foreach($s['entities'] as $key=>$e)if(str_starts_with($key,'page-'))$items[$key]=$e;
   $result=[];foreach($items as $key=>$e)if(design_can($u,'pages',$key))$result[]=['id'=>$key,'title'=>$e['draft']['title'],'href'=>$e['draft']['href'],'status'=>$e['status'],'version'=>$e['version'],'hasDraft'=>$e['draft']!==$e['published']];
-  api_json(200,['pages'=>$result,'user'=>public_user($u)+['permissions'=>$u['permissions']??[]],'media'=>design_can($u,'media')?$s['media']:[],'assets'=>design_can($u,'media')?image_catalog(false):[]]);
+  api_json(200,['pages'=>$result,'user'=>public_user($u)+['permissions'=>$u['permissions']??[]],'media'=>design_can($u,'media')?$s['media']:[],'assets'=>design_can($u,'media')?design_catalog():[]]);
  }
  if($action==='permissions'){
   if($u['role']!=='admin')api_json(403,['error'=>'فقط مدیر.']);
@@ -47,7 +47,7 @@ try {
   $key=bin2hex(random_bytes(12));$m=['file'=>hash('sha256',$bytes).'.'.$types[$info['mime']],'mime'=>$info['mime'],'width'=>$info[0],'height'=>$info[1],'title'=>design_text($d['title']??'',320),'alt'=>design_text($d['alt']??'',500)];
   locked(function()use($key,$m,$bytes,$dest,$id,$d,$u){$s=design_store();$folder=data_dir().'/design-media';if(!is_dir($folder))mkdir($folder,0700);$tmp=$folder.'/'.bin2hex(random_bytes(12)).'.tmp';if(file_put_contents($tmp,$bytes)!==strlen($bytes))throw new RuntimeException('Media write');chmod($tmp,0600);if(!rename($tmp,$folder.'/'.$m['file']))throw new RuntimeException('Media rename');$s['media'][$key]=$m;
    if($dest!=='library'){$fresh=current_user();if(!$fresh)api_json(401,['error'=>'نشست باطل شده است.']);design_require($fresh,'media');design_require($fresh,$dest==='block'?'blocks':'shared',$dest==='block'?$id:'');$target=$dest==='block'?$id:'shared';$e=design_entity($target,$s);if(($d['version']??-1)!==$e['version'])api_json(409,['error'=>'طرح تغییر کرده؛ دوباره بارگذاری کنید.']);$field=$dest==='block'?'blocks':$dest;$found=false;$replace=function(&$blocks)use(&$replace,&$found,$key,$d){foreach($blocks as &$b){if($b['id']===($d['block']??'')){$b['media']=$key;$found=true;}$replace($b['children']);}};
-    if($dest==='existing'){$asset=$d['asset']??'';if(!in_array($asset,array_column(image_catalog(false),'id'),true))throw new InvalidArgumentException('Asset');$e['draft']['assetOverrides'][$asset]=$key;}
+    if($dest==='existing'){$asset=$d['asset']??'';if(!in_array($asset,array_column(design_catalog(),'id'),true))throw new InvalidArgumentException('Asset');$e['draft']['assetOverrides'][$asset]=$key;}
     else {
     if(($d['operation']??'add')==='replace'){$replace($e['draft'][$field]);if(!$found)throw new InvalidArgumentException('Target block');}
     else $e['draft'][$field][]=design_blocks([['id'=>'image-'.$key,'type'=>'image','media'=>'','alt'=>$m['alt']]])[0]+[];
@@ -58,9 +58,9 @@ try {
  }
  design_require($u,$cap,$pageScope);$e=design_entity($id);
  if($method==='GET'){
-  if($action==='preview'){$draft=$e['draft'];if($id==='shared')$html=design_render('shared',$draft);elseif(in_array($id,['menu','categories','patterns'],true))throw new InvalidArgumentException('Preview page required');else $html=design_preview_html($id,$draft);
+  if($action==='preview'){$draft=$e['draft'];$shared=null;if(!empty($_GET['sharedDraft'])){design_require($u,'shared');$shared=design_entity('shared')['draft'];}if($id==='shared')$html=design_preview_html('shared',$draft);elseif(in_array($id,['menu','categories','patterns'],true))throw new InvalidArgumentException('Preview page required');else $html=design_preview_html($id,$draft,$shared);
    header('Content-Type: text/html; charset=utf-8');header('X-Robots-Tag: noindex');echo $html;exit;}
-  $fields=[];if($pageScope!==''&&!str_starts_with($id,'page-'))$fields=array_values(array_map(fn($f)=>array_intersect_key($f,array_flip(['id','label','value'])),array_filter(fields_for(render_page($id),$id,state()),fn($f)=>$f['scope']==='page')));
+  $fields=[];if(($pageScope!==''||$id==='shared')&&!str_starts_with($id,'page-'))$fields=array_values(array_map(fn($f)=>array_intersect_key($f,array_flip(['id','label','value'])),array_filter(fields_for(render_page($id==='shared'?'home':$id),$id==='shared'?'home':$id,state()),fn($f)=>($id==='shared')===($f['scope']!=='page'))));
   api_json(200,['entity'=>$e,'fields'=>$fields]);
  }
  $result=locked(function()use($u,$id,$cap,$pageScope,$action,$d){$s=design_store();$e=design_entity($id,$s);if(($d['version']??-1)!==$e['version'])api_json(409,['error'=>'نسخهٔ جدیدتری ذخیره شده؛ برای جلوگیری از بازنویسی، دوباره بارگذاری کنید.']);
@@ -75,7 +75,7 @@ try {
     if(($next['text']??[])!==($e['draft']['text']??[]))design_require($fresh,'text',$id);
     if(($next['blocks']??[])!==($e['draft']['blocks']??[])||($next['mode']??'')!==($e['draft']['mode']??''))design_require($fresh,'blocks',$id);
    }
-   if($action==='preview'){header('Content-Type: text/html; charset=utf-8');header('X-Robots-Tag: noindex');echo design_preview_html($id,$next);exit;}
+   if($action==='preview'){header('Content-Type: text/html; charset=utf-8');header('X-Robots-Tag: noindex');$shared=null;if(!empty($d['sharedDraft'])){design_require($fresh,'shared');$shared=design_entity('shared')['draft'];}echo design_preview_html($id,$next,$shared);exit;}
    $e['draft']=$next;
   }elseif($action==='publish'){design_require($fresh,'publish',$pageScope);if($e['status']==='trash')throw new InvalidArgumentException('Restore first');design_check_public_links($id,$e['draft']);$e['published']=$e['draft'];$e['status']='published';}
   elseif(in_array($action,['unpublish','trash'],true)){design_require($fresh,'publish',$pageScope);$e['status']=$action==='trash'?'trash':'unpublished';}
