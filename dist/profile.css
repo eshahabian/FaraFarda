@@ -22,3 +22,6 @@
 @media(max-width:760px){.profile-layout{grid-template-columns:1fr;gap:20px}.profile-contents{position:static;max-height:none;padding:0}.profile-contents nav{display:grid;grid-template-columns:1fr 1fr;max-height:235px;overflow:auto;border:1px solid #dae4eb;background:#fff}.profile-contents nav a{font-size:11px;padding:10px 12px}.profile-contents h2{font-size:21px;margin-bottom:14px}.profile-contents .profile-back{margin:12px 0 0}.profile-article{padding:24px 20px}.profile-chapter h2{font-size:20px}.profile-chapter p,.profile-chapter li{font-size:14px;line-height:2.2}.profile-section{padding:30px 16px}.profile-chapter ul{padding-right:25px}}
 
 .profile-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin:22px 0}.profile-gallery figure{margin:0;min-width:0}.profile-gallery img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;background:#f4f7f9;border-radius:8px}.profile-gallery figcaption{font-size:12px;line-height:1.9;color:#536477;padding:8px 0}
+
+/* Let equipment photos fill the width at their natural proportions. */
+.profile-gallery img[src*="/assets/mining/"]{aspect-ratio:auto}

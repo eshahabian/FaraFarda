@@ -121,7 +121,7 @@ sectors.forEach((s, i) => {
 <link rel="stylesheet" href="../sector.css?v=3">
 <link rel="stylesheet" href="../navigation.css?v=1">
 <link rel="stylesheet" href="../footer.css?v=1">
-<link rel="stylesheet" href="../profile.css?v=1">
+<link rel="stylesheet" href="../profile.css?v=${slugs[i] === 'mining' ? 2 : 1}">
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
 <link rel="icon" href="../favicon.ico">
 <link rel="apple-touch-icon" href="../assets/favicon-180.png">
