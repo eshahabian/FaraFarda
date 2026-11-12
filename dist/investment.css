@@ -1,0 +1,6 @@
+.investment-principles{padding:32px;background:var(--panel);border:1px solid var(--line);align-self:center}
+.investment-principles h3{color:var(--gold-soft);margin-top:0}
+.investment-principles li{line-height:2.2;color:var(--muted);padding-block:4px}
+.investment-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.investment-grid p{font-size:14px;line-height:2;color:var(--muted);padding:0 16px 16px}
+@media(max-width:760px){.investment-grid{grid-template-columns:1fr}.investment-principles{padding:20px}}

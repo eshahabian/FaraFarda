@@ -12,7 +12,7 @@ const areas = [
 
 function renderHeader(base = '', current = 'home') {
   const menu = JSON.parse(fs.readFileSync(path.join(__dirname, 'content/navigation.json'), 'utf8'));
-  const currentHref = current === 'home' ? 'index.html' : `sectors/${current}.html`;
+  const currentHref = current === 'home' ? 'index.html' : current === 'logistics-home' ? 'logistics.html' : `sectors/${current}.html`;
   const safe = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
   const links = menu.items.map(item => { const href = /^(https?:|mailto:|tel:)/.test(item.href) ? item.href : base + item.href; return `<a href="${safe(href)}"${item.href.split('#')[0] === currentHref ? ' aria-current="page"' : ''}>${safe(item.label)}</a>`; }).join('');
   return `<header class="fara-header" data-navigation>
