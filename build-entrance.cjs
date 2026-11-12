@@ -14,7 +14,7 @@ const logo=`<a class="brand" href="index.html" aria-label="گروه بین‌ا�
 function buildEntrance(){
 const cards=fields.map(([id,title,copy,href,d],i)=>`<a class="activity" data-sector="${id}" href="${href}"><span class="activity-icon"><svg viewBox="0 0 84 84" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg></span><h3>${title}</h3></a>`).join('');
 const html=`<!doctype html>
-<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#04172d"><meta name="description" content="گروه بین‌المللی فرا؛ فعالیت در تجارت، صنعت، لجستیک و سرمایه‌گذاری. فراتر از مرزها، هم‌مسیر با آینده."><title>گروه بین‌المللی فرا | فراتر از مرزها، هم‌مسیر با آینده</title><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="navigation.css?v=1"><link rel="stylesheet" href="entrance.css?v=15"></head><body>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#04172d"><meta name="description" content="گروه بین‌المللی فرا؛ فعالیت در تجارت، صنعت، لجستیک و سرمایه‌گذاری. فراتر از مرزها، هم‌مسیر با آینده."><title>گروه بین‌المللی فرا | فراتر از مرزها، هم‌مسیر با آینده</title><link rel="icon" href="favicon.ico"><link rel="stylesheet" href="navigation.css?v=1"><link rel="stylesheet" href="entrance.css?v=16"></head><body>
 <a class="skip" href="#main">رفتن به محتوای اصلی</a>${renderHeader()}
 <main id="main"><section class="brand-hero" aria-labelledby="group-title"><div class="brand-hero-scene"><div class="brand-hero-heading"><h1 id="group-title">گروه بین‌المللی فرا</h1><div class="brand-hero-en" lang="en" dir="ltr"><span>FARA INTERNATIONAL GROUP</span></div><p class="brand-hero-slogan">فراتر از مرزها، هم‌مسیر با آینده</p></div><img src="assets/fara-global-hero-no-logo.png" width="1672" height="941" alt="شبکه ارتباطات جهانی، بندر تجاری، صنایع نفت و گاز، ساختمان‌ها و منسوجات" fetchpriority="high" decoding="async"></div></section>
 <section class="activities wrap" id="activities"><h2 class="activities-title">حوزه‌های فعالیت ما</h2><div class="activity-grid">${cards}</div></section>
@@ -26,6 +26,7 @@ fs.writeFileSync(path.join(__dirname,'dist/index.html'),html);
 }
 module.exports={buildEntrance};
 if(require.main===module)buildEntrance();
+
 
 
 

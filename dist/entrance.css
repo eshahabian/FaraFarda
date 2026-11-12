@@ -238,3 +238,5 @@ em{font-style:normal;color:#dcc183}
 @media(max-width:640px){.about .eyebrow{font-size:16px}}
 .direction-grid article>.eyebrow{font-size:16.5px}
 
+/* Mirror the left-column item order so both icon columns face the center. */
+@media(min-width:641px){.activities .activity:nth-child(odd){flex-direction:row-reverse;justify-content:flex-start}}
