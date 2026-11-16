@@ -240,3 +240,22 @@ em{font-style:normal;color:#dcc183}
 
 /* Mirror the left-column item order so both icon columns face the center. */
 @media(min-width:641px){.activities .activity:nth-child(odd){flex-direction:row-reverse;justify-content:flex-start}}
+
+/* Center each mobile activity icon above its label. */
+@media(max-width:640px){
+  .activities .activity:nth-child(n){
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:18px 12px;
+    text-align:center;
+  }
+  .activities .activity h3{
+    flex:0 1 auto;
+    width:100%;
+    min-width:0;
+    text-align:center;
+    overflow-wrap:anywhere;
+  }
+}
