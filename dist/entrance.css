@@ -241,21 +241,25 @@ em{font-style:normal;color:#dcc183}
 /* Mirror the left-column item order so both icon columns face the center. */
 @media(min-width:641px){.activities .activity:nth-child(odd){flex-direction:row-reverse;justify-content:flex-start}}
 
-/* Center each mobile activity icon above its label. */
+/* Keep mobile icons left and their labels aligned to the right edge. */
 @media(max-width:640px){
   .activities .activity:nth-child(n){
-    flex-direction:column;
+    direction:ltr;
+    flex-direction:row;
     align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:18px 12px;
-    text-align:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:12px 6px;
+  }
+  .activities .activity-icon{
+    flex:0 0 64px;
+    width:64px;
   }
   .activities .activity h3{
-    flex:0 1 auto;
-    width:100%;
+    direction:rtl;
+    flex:1 1 0;
     min-width:0;
-    text-align:center;
+    text-align:right;
     overflow-wrap:anywhere;
   }
 }
